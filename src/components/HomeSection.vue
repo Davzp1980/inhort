@@ -1,16 +1,29 @@
-<script setup></script>
+<script setup>
+defineProps({
+  scrollTo: Function,
+});
+
+const emit = defineEmits(['open-modal']);
+
+function onOpen() {
+  emit('open-modal', true);
+}
+</script>
 <template>
-  <div class="container" id="home-section">
+  <div class="container main-container" id="home-section">
     <div class="header">
       <img class="logo" src="/img/logo.svg" alt="logo" />
       <nav>
         <ul class="nav-links">
-          <li class="nav-link"><a href="#home-section">Головна</a></li>
-          <li class="nav-link"><a href="#">Моделі</a></li>
+          <li class="nav-link" @click="scrollTo('home')">Головна</li>
+          <li class="nav-link" @click="scrollTo('models')">Моделі</li>
           <li class="nav-link"><a href="#">Тканини</a></li>
-          <li class="nav-link"><a href="#">Про Інхорт</a></li>
-          <li class="nav-link"><a href="#">FAQ</a></li>
-          <li class="nav-link"><a href="#">Контакти</a></li>
+          <li class="nav-link" @click="scrollTo('some-words-about')">
+            Про Інхорт
+          </li>
+
+          <li class="nav-link" @click="scrollTo('faqs')">FAQ</li>
+          <li class="nav-link" @click="scrollTo('contacts')">Контакти</li>
         </ul>
       </nav>
     </div>
@@ -21,7 +34,7 @@
       <p class="p-2">Для салонів, дизайнерів, підрядників.</p>
       <p class="p-3">Стабільні терміни, сучасний дизайн, бездоганна якість</p>
       <div class="buttons-div">
-        <button class="get-price-btn" type="button">
+        <button class="get-price-btn" type="button" @click="onOpen">
           Отримати гуртовий прайс
         </button>
         <button class="contact-us-btn" type="button">З'язатися з нами</button>
@@ -32,10 +45,10 @@
 
 <style scoped>
 .container {
-  width: 1920px;
   height: 852px;
   background-image: url('/img/mainBg.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 44px;
   padding-left: 112px;
 }
@@ -100,6 +113,7 @@
 }
 
 .get-price-btn {
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   width: 266px;
@@ -114,6 +128,7 @@
 }
 
 .contact-us-btn {
+  cursor: pointer;
   border: 2px solid #b00;
   border-radius: 10px;
   width: 266px;

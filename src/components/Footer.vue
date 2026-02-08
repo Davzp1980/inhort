@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1920px;
   padding: 45px 0 95px 0;
   background-color: #cfcfcf;
 }

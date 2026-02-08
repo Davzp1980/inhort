@@ -1,67 +1,43 @@
-<script setup></script>
+<script setup>
+import ReviewItem from '@/components/ReviewItem.vue';
+import { Carousel, Slide } from 'vue3-carousel';
+import 'vue3-carousel/dist/carousel.css';
+import { useTemplateRef } from 'vue';
+import 'primeicons/primeicons.css';
+
+const myCarousel = useTemplateRef('carousel');
+</script>
 <template>
   <div class="container" id="reviews">
     <h2 class="h-2">Відгуки</h2>
 
-    <div class="reviews-container">
-      <div class="review-container">
-        <div class="review-photo-div">
-          <img src="/img/user.png" alt="user photo" />
+    <div class="slider">
+      <div class="navigation">
+        <div class="navBtn prev" @click="myCarousel.prev()">
+          <i
+            class="pi pi-arrow-left"
+            style="font-size: 30px; color: #bb0000"
+          ></i>
         </div>
-        <h2 class="user-name">Микита Борисов</h2>
-        <p class="user-review">
-          На ПК потрібно було замінити SSD, я обрав м2 і тут вже потрібно було
-          встановити вінду, майстер супер, встановив спочатку на диск D, а потім
-          на C, але гроші взяв тільки за одну установку, рекомендую
-        </p>
+        <div class="navBtn next" @click="myCarousel.next()">
+          <i
+            class="pi pi-arrow-right"
+            style="font-size: 30px; color: #bb0000"
+          ></i>
+        </div>
       </div>
 
-      <div class="review-container">
-        <div class="review-photo-div">
-          <img src="/img/user.png" alt="user photo" />
-        </div>
-        <h2 class="user-name">Микита Борисов</h2>
-        <p class="user-review">
-          На ПК потрібно було замінити SSD, я обрав м2 і тут вже потрібно було
-          встановити вінду, майстер супер, встановив спочатку на диск D, а потім
-          на C, але гроші взяв тільки за одну установку, рекомендую
-        </p>
-      </div>
-
-      <div class="review-container">
-        <div class="review-photo-div">
-          <img src="/img/user.png" alt="user photo" />
-        </div>
-        <h2 class="user-name">Микита Борисов</h2>
-        <p class="user-review">
-          На ПК потрібно було замінити SSD, я обрав м2 і тут вже потрібно було
-          встановити вінду, майстер супер, встановив спочатку на диск D, а потім
-          на C, але гроші взяв тільки за одну установку, рекомендую
-        </p>
-      </div>
-
-      <div class="review-container">
-        <div class="review-photo-div">
-          <img src="/img/user.png" alt="user photo" />
-        </div>
-        <h2 class="user-name">Микита Борисов</h2>
-        <p class="user-review">
-          На ПК потрібно було замінити SSD, я обрав м2 і тут вже потрібно було
-          встановити вінду, майстер супер, встановив спочатку на диск D, а потім
-          на C, але гроші взяв тільки за одну установку, рекомендую
-        </p>
-      </div>
-
-      <div class="review-container">
-        <div class="review-photo-div">
-          <img src="/img/user.png" alt="user photo" />
-        </div>
-        <h2 class="user-name">Микита Борисов</h2>
-        <p class="user-review">
-          На ПК потрібно було замінити SSD, я обрав м2 і тут вже потрібно було
-          встановити вінду, майстер супер, встановив спочатку на диск D, а потім
-          на C, але гроші взяв тільки за одну установку, рекомендую
-        </p>
+      <div class="carousel-wrapper">
+        <carousel
+          ref="carousel"
+          :items-to-show="4"
+          :snap-align="'start'"
+          :gap="10"
+        >
+          <slide v-for="index in 5" :key="index">
+            <ReviewItem />
+          </slide>
+        </carousel>
       </div>
     </div>
   </div>
@@ -72,7 +48,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1920px;
   padding: 45px 0 95px 0;
 }
 
@@ -84,46 +59,21 @@
   margin-bottom: 61px;
 }
 
-.reviews-container {
-  display: flex;
-  gap: 50px;
-}
+.slider {
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
 
-.review-container {
-  border-radius: 20px;
-  width: 245px;
-  height: 400px;
-  padding: 13px 17px 35px 13px;
-  backdrop-filter: blur(70px);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: linear-gradient(
-    270deg,
-    rgba(52, 52, 52, 0.4) 35.48%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-}
+  .navBtn {
+    cursor: pointer;
+  }
 
-.review-photo-div {
-  border-radius: 50%;
-  width: 110px;
-  height: 110px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.user-name {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 14px;
-}
-
-.user-review {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #e0e0ff;
-  text-align: left;
+  .carousel-wrapper {
+    padding: 20px;
+  }
 }
 </style>

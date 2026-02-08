@@ -57,7 +57,6 @@
   flex-direction: column;
   align-items: center;
   gap: 54px;
-  width: 1920px;
   padding: 66px 0 77px 0;
   background: #cfcfcf;
 }
