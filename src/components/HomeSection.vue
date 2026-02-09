@@ -138,5 +138,6 @@ function onOpen() {
   font-weight: 700;
   font-size: 16px;
   color: black;
+  background-color: transparent;
 }
 </style>

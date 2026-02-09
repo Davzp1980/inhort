@@ -1,6 +1,10 @@
 <script setup>
 import 'primeicons/primeicons.css';
-import { ref } from 'vue';
+import { useToast } from 'vue-toastification';
+import { useForm, useField } from 'vee-validate';
+import { z } from 'zod';
+import IMask from 'imask';
+import { onMounted, ref } from 'vue';
 
 const props = defineProps({
   closeModal: {
@@ -9,19 +13,66 @@ const props = defineProps({
   },
 });
 
-const formData = ref({
-  name: '',
-  email: '',
+const schema = z.object({
+  name: z.string().min(1, "Ім'я повинно бути більше одниєї літери"),
+  email: z.string().email('Неверный email'),
+  phone: z
+    .string()
+    .regex(/^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
 });
+
+// 2️⃣ Создаем форму через vee-validate
+const { handleSubmit, setErrors } = useForm({
+  initialValues: { name: '', email: '', phone: '' },
+});
+
+// Поля формы
+const { value: name, errorMessage: nameError } = useField('name');
+const { value: email, errorMessage: emailError } = useField('email');
+const { value: phone, errorMessage: phoneError } = useField('phone');
 
 function onClose() {
   props.closeModal();
 }
+const toast = useToast();
 
-function onSubmit() {
-  console.log(formData.value.name);
-  props.closeModal();
-}
+const onSubmit = handleSubmit(values => {
+  try {
+    schema.parse(values); // Zod валидация
+    console.log('Форма валидна:', values);
+    toast.success('Успешно!', {
+      position: 'top-center',
+      timeout: 2000,
+      hideProgressBar: true,
+      toastClassName: 'success-toast',
+    });
+    props.closeModal();
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      const formErrors = {};
+      for (const issue of err.issues) {
+        // ⚠️ используем `issues`, а не `errors`
+        if (issue.path.length > 0) {
+          formErrors[issue.path[0]] = issue.message;
+        }
+      }
+      setErrors(formErrors); // покажет ошибки под полями
+    } else {
+      console.error('Неизвестная ошибка:', err);
+    }
+  }
+});
+
+// 🔹 Маска телефона
+const phoneInputRef = ref(null);
+
+onMounted(() => {
+  if (phoneInputRef.value) {
+    IMask(phoneInputRef.value, {
+      mask: '+38 (000) 000-00-00',
+    });
+  }
+});
 </script>
 
 <template>
@@ -36,12 +87,36 @@ function onSubmit() {
         <form class="send-form" @submit.prevent="onSubmit">
           <label class="form-label"
             >Ім'я
-            <input class="input" type="text" v-model="formData.name" />
+            <input
+              class="input"
+              type="text"
+              v-model="name"
+              :placeholder="nameError ? nameError : 'Введіть ваше ім\'я'"
+              :class="nameError ? 'error' : ''"
+            />
+          </label>
+
+          <label class="form-label"
+            >Телефон
+            <input
+              class="input"
+              type="text"
+              v-model="phone"
+              :placeholder="phoneError ? phoneError : '+38 (XXX) XXX-XX-XX'"
+              :class="phoneError ? 'error' : ''"
+              ref="phoneInputRef"
+            />
           </label>
 
           <label class="form-label">
             Email
-            <input class="input" type="email" v-model="formData.email" />
+            <input
+              class="input"
+              type="email"
+              v-model="email"
+              :placeholder="emailError ? emailError : 'Введіть email'"
+              :class="emailError ? 'error' : ''"
+            />
           </label>
 
           <button class="submit-btn" type="submit">Відправити</button>
@@ -79,6 +154,7 @@ function onSubmit() {
 }
 
 .close-btn {
+  cursor: pointer;
   border: none;
   background-color: transparent;
   position: absolute;
@@ -100,10 +176,15 @@ function onSubmit() {
 }
 
 .input {
+  padding-left: 10px;
   border: none;
   border-radius: 10px;
   background-color: rgba(5, 5, 5, 0.1);
   height: 40px;
+}
+
+.error::placeholder {
+  color: red;
 }
 
 .submit-btn {
