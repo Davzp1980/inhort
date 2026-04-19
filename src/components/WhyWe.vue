@@ -1,51 +1,38 @@
 <script setup></script>
 <template>
   <div class="container" id="why-we">
-    <h2 class="h-2">Чому саме <span class="span">ми</span></h2>
-    <div class="why-we-container">
+    <h2 class="h-2">Чому саме ми</h2>
+
+    <div class="why-we-container1">
       <div class="why-we-item">
-        <img src="/img/gear.svg" alt="image" />
-        <p class="why-we-item-text">Індивідуальне виробництво</p>
+        <img class="why-we-item-img" src="/img/opt.svg" alt="image" />
+        <h2 class="why-we-item-h2">Гуртові ціни</h2>
+        <p class="why-we-item-text">Найкращі умови для оптових покупців</p>
       </div>
       <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/car.svg" alt="image" />
-          <p class="why-we-item-text">Безкоштовна доставка по Україні</p>
-        </div>
+        <img class="why-we-item-img" src="/img/fabric.svg" alt="image" />
+        <h2 class="why-we-item-h2">Якісні тканини</h2>
+        <p class="why-we-item-text">
+          Широкий асортимент преміальних матеріалів
+        </p>
       </div>
       <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/sale.svg" alt="image" />
-          <p class="why-we-item-text">Гуртові ціни від виробника</p>
-        </div>
+        <img class="why-we-item-img" src="/img/time.svg" alt="image" />
+        <h2 class="why-we-item-h2">Швидке виробництво</h2>
+        <p class="why-we-item-text">Терміни від 3 робочих днів</p>
+      </div>
+    </div>
+
+    <div class="why-we-container1 why-we-container2">
+      <div class="why-we-item">
+        <img class="why-we-item-img" src="/img/car.svg" alt="image" />
+        <h2 class="why-we-item-h2">Доставка</h2>
+        <p class="why-we-item-text">Безкоштовна доставка по Україні</p>
       </div>
       <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/textile.svg" alt="image" />
-          <p class="why-we-item-text">Терміни від 3 робочих днів</p>
-        </div>
-      </div>
-      <div class="why-we-item">
-        <img src="/img/gear.svg" alt="image" />
-        <p class="why-we-item-text">Індивідуальне виробництво</p>
-      </div>
-      <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/car.svg" alt="image" />
-          <p class="why-we-item-text">Безкоштовна доставка по Україні</p>
-        </div>
-      </div>
-      <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/sale.svg" alt="image" />
-          <p class="why-we-item-text">Гуртові ціни від виробника</p>
-        </div>
-      </div>
-      <div class="why-we-item">
-        <div class="why-we-item">
-          <img src="/img/textile.svg" alt="image" />
-          <p class="why-we-item-text">Терміни від 3 робочих днів</p>
-        </div>
+        <img class="why-we-item-img" src="/img/gear.svg" alt="image" />
+        <h2 class="why-we-item-h2">Індивідуальне виробництво</h2>
+        <p class="why-we-item-text">ШРобота з нестандартними розмірами</p>
       </div>
     </div>
   </div>
@@ -57,50 +44,66 @@
   flex-direction: column;
   align-items: center;
   gap: 54px;
-  padding: 66px 0 77px 0;
-  background: #cfcfcf;
+
+  background: #f9fafb;
+  margin-bottom: 60px;
 }
 
-.h-2,
-.span {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 54px;
+.h-2 {
+  font-family: var(--font-family) sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #171717;
 }
 
-.span {
-  color: #b00;
-}
-
-.why-we-container {
-  width: 1010px;
+.why-we-container1 {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 50px;
-  column-gap: 70px;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.why-we-container2 {
+  margin-bottom: 0;
 }
 
 .why-we-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  gap: 22px;
+
   border-radius: 15px;
-  width: 200px;
-  height: 200px;
+  width: 384px;
+  height: 240px;
+  padding: 32px 32px 56px 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: #fff;
 }
 
+.why-we-item-img {
+  margin-bottom: 24px;
+}
+
+.why-we-item-h2 {
+  font-family: var(--font-family) sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #101828;
+  margin-bottom: 12px;
+}
+
 .why-we-item-text {
   font-family: var(--font-family), sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  text-align: center;
-  color: #574d4d;
-  max-width: 180px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #4a5565;
 }
 </style>

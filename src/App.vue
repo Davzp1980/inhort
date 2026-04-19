@@ -1,14 +1,17 @@
 <script setup>
 import HomeSection from './components/HomeSection.vue';
-import WorkForProfs from '@/components/WorkForProfs.vue';
 import WhyWe from '@/components/WhyWe.vue';
 import Models from '@/components/Models.vue';
-import FaqS from '@/components/FaqS.vue';
-import SomeWordsAbout from '@/components/SomeWordsAbout.vue';
 import Reviews from '@/components/Reviews.vue';
 import Footer from '@/components/Footer.vue';
 import GetPriceModal from '@/components/GetPriceModal.vue';
 import { ref } from 'vue';
+import Header from '@/components/Header.vue';
+import Personalization from '@/components/Personalization.vue';
+import ViewConfigurations from '@/components/ViewConfigurations.vue';
+import OurSystems from '@/components/OurSystems.vue';
+import WhoWeWorkFor from '@/components/WhoWeWorkFor.vue';
+import JoinUs from '@/components/JoinUs.vue';
 
 const scrollTo = id => {
   const el = document.getElementById(id);
@@ -28,16 +31,25 @@ function closeModal() {
 
 <template>
   <main>
-    <HomeSection :scrollTo="scrollTo" id="home" @open-modal="openModal" />
-    <WorkForProfs />
-    <WhyWe />
-    <Models id="models" />
-    <FaqS id="faqs" />
-    <SomeWordsAbout id="some-words-about" />
-    <Reviews />
-    <Footer id="contacts" />
-    <GetPriceModal v-if="isOpenModal" :closeModal="closeModal" />
+    <div class="main-container">
+      <Header :scrollTo="scrollTo" />
+      <HomeSection :scrollTo="scrollTo" id="home" @open-modal="openModal" />
+      <WhyWe id="why-we" />
+      <Models id="models" />
+      <Personalization id="personalization" />
+      <ViewConfigurations id="viewConfigurations" />
+      <OurSystems id="ourSystems" />
+      <WhoWeWorkFor id="whoWeWorkFor" />
+      <Reviews id="reviews" />
+      <JoinUs id="joinUs" />
+
+      <Footer id="contacts" :scrollTo="scrollTo" />
+      <GetPriceModal v-if="isOpenModal" :closeModal="closeModal" />
+    </div>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main-container {
+}
+</style>

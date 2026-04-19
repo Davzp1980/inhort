@@ -10,74 +10,34 @@ function onOpen() {
 }
 </script>
 <template>
-  <div class="container main-container" id="home-section">
-    <div class="header">
-      <img class="logo" src="/img/logo.svg" alt="logo" />
-      <nav>
-        <ul class="nav-links">
-          <li class="nav-link" @click="scrollTo('home')">Головна</li>
-          <li class="nav-link" @click="scrollTo('models')">Моделі</li>
-          <li class="nav-link"><a href="#">Тканини</a></li>
-          <li class="nav-link" @click="scrollTo('some-words-about')">
-            Про Інхорт
-          </li>
-
-          <li class="nav-link" @click="scrollTo('faqs')">FAQ</li>
-          <li class="nav-link" @click="scrollTo('contacts')">Контакти</li>
-        </ul>
-      </nav>
-    </div>
-
+  <div class="container" id="home-section">
     <div class="main-content">
       <h1 class="h1">РИМСЬКІ ШТОРИ</h1>
       <p class="p-1">гуртом вiд виробника</p>
       <p class="p-2">Для салонів, дизайнерів, підрядників.</p>
       <p class="p-3">Стабільні терміни, сучасний дизайн, бездоганна якість</p>
-      <div class="buttons-div">
-        <button class="get-price-btn" type="button" @click="onOpen">
-          Отримати гуртовий прайс
-        </button>
-        <button class="contact-us-btn" type="button">З'язатися з нами</button>
-      </div>
+      <button class="button" type="button">Зв'язатися з нами</button>
     </div>
   </div>
 </template>
 
 <style scoped>
 .container {
+  min-width: 1440px;
   height: 852px;
-  background-image: url('/img/mainBg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 44px;
-  padding-left: 112px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 132px;
-}
-
-.logo {
-  margin-right: 230px;
-}
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-}
-
-.nav-link {
-  cursor: pointer;
-  font-family: var(--font-family), sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  color: #fff;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url('/img/hero-bg1.png') center / cover no-repeat;
+  margin-bottom: 60px;
 }
 
 .main-content {
-  margin-left: 202px;
+  padding: 180px 0 0 102px;
 }
 
 .h1 {
@@ -106,38 +66,20 @@ function onOpen() {
 .p-3 {
   margin-bottom: 46px;
 }
-
-.buttons-div {
-  display: flex;
-  gap: 30px;
-}
-
-.get-price-btn {
+.button {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  width: 266px;
-  height: 70px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: #b00;
-
+  padding: 18px 34px;
+  width: 223px;
+  height: 61px;
+  background-color: #b00;
   font-family: var(--font-family), sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
   color: #fff;
-}
-
-.contact-us-btn {
-  cursor: pointer;
-  border: 2px solid #b00;
-  border-radius: 10px;
-  width: 266px;
-  height: 70px;
-
-  font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: black;
-  background-color: transparent;
 }
 </style>
