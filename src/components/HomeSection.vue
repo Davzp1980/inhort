@@ -23,7 +23,8 @@ function onOpen() {
 
 <style scoped>
 .container {
-  min-width: 1440px;
+  width: 100%;
+  margin-left: -12px;
   height: 852px;
   background:
     linear-gradient(
@@ -42,24 +43,32 @@ function onOpen() {
 
 .h1 {
   font-family: var(--font-family), sans-serif;
-  font-weight: 900;
-  font-size: 83px;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
   color: #fff;
 }
 
 .p-1 {
   font-family: var(--font-family), sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
   color: #fff;
-  margin-bottom: 26px;
+  margin-bottom: 32px;
 }
-
+.p-2 {
+  margin-bottom: 9px;
+}
 .p-2,
 .p-3 {
   font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 23px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
   color: #fff;
 }
 

@@ -50,7 +50,6 @@ import { personalization } from '@/data/productList.js';
 .model-container {
   padding-top: 80px;
   width: 1200px;
-  margin-bottom: 80px;
 }
 .model-container:last-child {
   margin-bottom: 0;

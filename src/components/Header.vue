@@ -24,7 +24,7 @@ defineProps({
     <div class="connect">
       <div class="phone-div">
         <img src="/img/phone.svg" alt="phone" />
-        <p>+380 63 846 65 46</p>
+        <p class="nav-link">+380 63 846 65 46</p>
       </div>
       <button class="button" type="button">Зв'язатися з нами</button>
     </div>
@@ -36,14 +36,23 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 21px 113px;
+}
+.logo {
+  width: 132px;
+  height: 38px;
 }
 
 .nav-links {
   display: flex;
   gap: 40px;
   list-style: none;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #364153;
 }
 
 .nav-link {

@@ -27,6 +27,7 @@ import { models } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 0 112px;
+  gap: 80px;
 }
 
 .h-2 {
@@ -50,7 +51,7 @@ import { models } from '/src/data/productList.js';
 
 .model-name-wrapper {
   display: grid;
-  grid-template-columns: 300px 1fr; /* фикс для заголовка */
+  grid-template-columns: 300px 1fr;
   align-items: start;
   column-gap: 300px;
   margin-bottom: 48px;
@@ -78,7 +79,7 @@ import { models } from '/src/data/productList.js';
 .model-img-container {
   width: 100%;
   display: flex;
-  gap: clamp(12px, 5vw, 32px);
+  gap: 32px;
   justify-content: center;
 }
 

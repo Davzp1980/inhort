@@ -43,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 60px 112px;
   gap: 54px;
 
   background: #f9fafb;
@@ -71,6 +72,8 @@
 }
 
 .why-we-item {
+  box-sizing: border-box;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: start;

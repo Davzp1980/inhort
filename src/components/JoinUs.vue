@@ -95,6 +95,7 @@ const email = ref('');
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 72px;
 }
 
 .email-phone-div {
