@@ -27,7 +27,6 @@ import { models } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 0 112px;
-  gap: 80px;
 }
 
 .h-2 {
