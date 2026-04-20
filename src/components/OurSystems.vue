@@ -13,7 +13,7 @@ import { ourSystems } from '/src/data/productList.js';
           class="ourSystems-wrapper"
         >
           <div class="item-container">
-            <img :src="product.img" alt="product.title" />
+            <img class="img" :src="product.img" alt="product.title" />
             <div class="description-div">
               <h2 class="item-title">{{ product.title }}</h2>
               <p class="item-description">{{ product.desc }}</p>
@@ -89,6 +89,10 @@ import { ourSystems } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
-  margin-bottom: 64px;
+}
+.img {
+  width: 540px;
+  height: 540px;
+  object-fit: cover;
 }
 </style>

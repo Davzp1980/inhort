@@ -44,20 +44,20 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 112px;
-  gap: 54px;
 
   background: #f9fafb;
   margin-bottom: 60px;
 }
 
 .h-2 {
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 64px;
   line-height: 140%;
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
+  margin-bottom: 32px;
 }
 
 .why-we-container1 {
@@ -78,7 +78,6 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
-
   border-radius: 15px;
   width: 384px;
   height: 240px;

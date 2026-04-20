@@ -38,6 +38,11 @@ defineProps({
   justify-content: space-between;
   padding: 21px 113px;
 }
+
+.h-2 {
+
+}
+
 .logo {
   margin: 0;
   width: 132px;

@@ -37,7 +37,6 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
-  margin-bottom: 24px;
 }
 
 .desc {

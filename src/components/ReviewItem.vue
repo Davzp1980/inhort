@@ -16,6 +16,7 @@ defineProps({
 
 <style scoped>
 .review-container {
+  box-sizing: border-box;
   border-radius: 15px;
   padding: 24px;
   width: 384px;

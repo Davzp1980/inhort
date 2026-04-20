@@ -16,8 +16,8 @@ const email = ref('');
               <p class="email-title">Email</p>
               <p class="email-text">Ми завжди готові допомогти.</p>
               <a class="email" href="mailto:inhortopt@gmail.com"
-                >inhortopt@gmail.com</a
-              >
+                >inhortopt@gmail.com
+              </a>
             </div>
             <div>
               <img src="/phone-icon.svg" alt="phone" />
