@@ -54,6 +54,7 @@ const myCarousel = useTemplateRef('carousel');
 
 <style scoped>
 .container {
+  width: 1440px;
   padding: 60px 80px;
 }
 
@@ -99,6 +100,7 @@ const myCarousel = useTemplateRef('carousel');
   width: 1440px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   gap: 32px;
 }
 </style>

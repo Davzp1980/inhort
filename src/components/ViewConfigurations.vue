@@ -34,7 +34,7 @@ import { viewConfigurations } from '/src/data/productList.js';
 }
 
 .h-2 {
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 64px;
   line-height: 140%;

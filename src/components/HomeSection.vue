@@ -24,7 +24,7 @@ function onOpen() {
 <style scoped>
 .container {
   width: 100%;
-  margin-left: -12px;
+
   height: 852px;
   background:
     linear-gradient(
@@ -34,7 +34,6 @@ function onOpen() {
       rgba(0, 0, 0, 0) 100%
     ),
     url('/img/hero-bg1.png') center / cover no-repeat;
-  margin-bottom: 60px;
 }
 
 .main-content {

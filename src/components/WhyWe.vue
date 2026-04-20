@@ -82,7 +82,6 @@
   width: 384px;
   height: 240px;
   padding: 32px 32px 56px 32px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: #fff;
 }
 

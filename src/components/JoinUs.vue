@@ -68,12 +68,14 @@ const email = ref('');
 
 <style scoped>
 .wrapper {
+  display: flex;
+  justify-content: center;
   background-color: #333;
 }
 .container {
   width: 1440px;
   margin: 0 auto;
-  padding: 96px 112px;
+  padding: 96px 0;
   background-color: #333;
 }
 

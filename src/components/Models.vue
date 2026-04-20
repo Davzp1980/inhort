@@ -31,14 +31,13 @@ import { models } from '/src/data/productList.js';
 }
 
 .h-2 {
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 64px;
   line-height: 140%;
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
-  margin-bottom: 60px;
 }
 
 .model-container {
@@ -88,8 +87,7 @@ import { models } from '/src/data/productList.js';
   overflow: hidden;
   width: 384px;
   height: 384px;
-  flex-shrink: 0;
-  object-fit: cover;
-  object-position: center;
+
+  object-fit: none;
 }
 </style>
