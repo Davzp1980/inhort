@@ -98,9 +98,10 @@ const email = ref('');
 }
 
 .connection-div {
+  width: 1216px;
   display: flex;
   align-items: center;
-  gap: 72px;
+  justify-content: space-between;
 }
 .content {
   display: flex;
