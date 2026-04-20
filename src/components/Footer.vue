@@ -4,57 +4,64 @@ defineProps({
 });
 </script>
 <template>
-  <div class="footer-container" id="contacts">
-    <div class="logo-nav">
-      <div class="logo">
-        <img class="logo-svg" src="/img/logo.svg" alt="logo" />
-        <p class="logo-nav-desc">Римські штори гуртом від виробника</p>
-        <p class="rights">© 2026 ІНХОРТ. Всі права захищені.</p>
+  <div class="wrapper">
+    <div class="footer-container" id="contacts">
+      <div class="logo-nav">
+        <div class="logo">
+          <img class="logo-svg" src="/img/logo.svg" alt="logo" />
+          <p class="logo-nav-desc">Римські штори гуртом від виробника</p>
+          <p class="rights">© 2026 ІНХОРТ. Всі права захищені.</p>
+        </div>
+
+        <div class="nav">
+          <h2 class="h2-nav">Навігація</h2>
+          <nav>
+            <ul class="nav-links">
+              <li class="nav-link" @click="scrollTo('models')">Моделі</li>
+              <li class="nav-link" @click="scrollTo('personalization')">
+                Персоналізації
+              </li>
+              <li class="nav-link" @click="scrollTo('viewConfigurations')">
+                Конфігурації
+              </li>
+              <li class="nav-link" @click="scrollTo('ourSystems')">Системи</li>
+              <li class="nav-link" @click="scrollTo('contacts')">Контакти</li>
+            </ul>
+          </nav>
+        </div>
       </div>
 
-      <div class="nav">
-        <h2 class="h2-nav">Навігація</h2>
-        <nav>
-          <ul class="nav-links">
-            <li class="nav-link" @click="scrollTo('models')">Моделі</li>
-            <li class="nav-link" @click="scrollTo('personalization')">
-              Персоналізації
-            </li>
-            <li class="nav-link" @click="scrollTo('viewConfigurations')">
-              Конфігурації
-            </li>
-            <li class="nav-link" @click="scrollTo('ourSystems')">Системи</li>
-            <li class="nav-link" @click="scrollTo('contacts')">Контакти</li>
-          </ul>
-        </nav>
+      <div class="contacts">
+        <p class="contacts-title">Контакти</p>
+        <a class="contacts-text" href="tel:+380638466546">
+          <img src="/phone-red-ison.svg" alt="phone" />
+          +380 63 846 65 46
+        </a>
+        <a class="contacts-text" href="mailto:inhortopt@gmail.com">
+          <img src="/email-red-icon.svg" alt="email" />
+          inhortopt@gmail.com
+        </a>
+        <p class="contacts-text">
+          <img src="/pointer-red-icon.svg" alt="email" />
+          Україна
+        </p>
       </div>
-    </div>
-
-    <div class="contacts">
-      <p class="contacts-title">Контакти</p>
-      <a class="contacts-text" href="tel:+380638466546">
-        <img src="/phone-red-ison.svg" alt="phone" />
-        +380 63 846 65 46
-      </a>
-      <a class="contacts-text" href="mailto:inhortopt@gmail.com">
-        <img src="/email-red-icon.svg" alt="email" />
-        inhortopt@gmail.com
-      </a>
-      <p class="contacts-text">
-        <img src="/pointer-red-icon.svg" alt="email" />
-        Україна
-      </p>
     </div>
   </div>
 </template>
 
 <style scoped>
+.wrapper {
+  background: #101828;
+}
+
 .footer-container {
+  margin: 0 auto;
+  width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 60px 112px;
-  background: #101828;
 }
 
 .logo {

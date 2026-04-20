@@ -12,31 +12,43 @@ const myCarousel = useTemplateRef('carousel');
   <div class="container" id="reviews">
     <h2 class="h-2">Відгуки наших клієнтів</h2>
     <p class="desc">Наша дружня команда завжди готова поспілкуватися</p>
-
-    <div class="slider">
-      <div class="navigation">
-        <div class="navBtn prev" @click="myCarousel.prev()">
-          <i
-            class="pi pi-arrow-left"
-            style="font-size: 30px; color: #bb0000"
-          ></i>
-        </div>
-        <div class="navBtn next" @click="myCarousel.next()">
-          <i
-            class="pi pi-arrow-right"
-            style="font-size: 30px; color: #bb0000"
-          ></i>
-        </div>
-      </div>
-
-      <div class="carousel-wrapper">
-        <carousel ref="carousel" :items-to-show="3" :snap-align="'start'">
-          <slide v-for="review in reviews" :key="review.id">
-            <ReviewItem :review="review" />
-          </slide>
-        </carousel>
-      </div>
+    <div class="reviews-div">
+      <ReviewItem
+        v-for="reviews in reviews"
+        :key="reviews.id"
+        :review="reviews"
+      />
     </div>
+
+    <!--    <div class="slider">-->
+    <!--      <div class="navigation">-->
+    <!--        <div class="navBtn prev" @click="myCarousel.prev()">-->
+    <!--          <i-->
+    <!--            class="pi pi-arrow-left"-->
+    <!--            style="font-size: 30px; color: #bb0000"-->
+    <!--          ></i>-->
+    <!--        </div>-->
+    <!--        <div class="navBtn next" @click="myCarousel.next()">-->
+    <!--          <i-->
+    <!--            class="pi pi-arrow-right"-->
+    <!--            style="font-size: 30px; color: #bb0000"-->
+    <!--          ></i>-->
+    <!--        </div>-->
+    <!--      </div>-->
+
+    <!--      <div class="carousel-wrapper">-->
+    <!--        <carousel-->
+    <!--          ref="carousel"-->
+    <!--          :items-to-show="3"-->
+    <!--          :snap-align="'start'"-->
+    <!--          :gap="0"-->
+    <!--        >-->
+    <!--          <slide v-for="review in reviews" :key="review.id">-->
+    <!--            <ReviewItem :review="review" />-->
+    <!--          </slide>-->
+    <!--        </carousel>-->
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
 </template>
 
@@ -82,5 +94,11 @@ const myCarousel = useTemplateRef('carousel');
     max-width: 1440px;
     padding: 20px 0;
   }
+}
+.reviews-div {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
 }
 </style>

@@ -27,6 +27,8 @@ import { ourSystems } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  margin: 0 auto;
+  width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;

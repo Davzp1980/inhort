@@ -5,69 +5,74 @@ const phone = ref('');
 const email = ref('');
 </script>
 <template>
-  <div class="container" id="joinUs">
-    <h2 class="h-2">Звʼяжіться з нами</h2>
-    <div class="connection-div">
-      <div class="email-phone-container">
-        <div class="email-phone-div">
-          <div>
-            <img src="/email-icon.svg" alt="email" />
-            <p class="email-title">Email</p>
-            <p class="email-text">Ми завжди готові допомогти.</p>
-            <a class="email" href="mailto:inhortopt@gmail.com"
-              >inhortopt@gmail.com</a
-            >
+  <div class="wrapper" id="joinUs">
+    <div class="container">
+      <h2 class="h-2">Звʼяжіться з нами</h2>
+      <div class="connection-div">
+        <div class="email-phone-container">
+          <div class="email-phone-div">
+            <div class="content">
+              <img src="/email-icon.svg" alt="email" />
+              <p class="email-title">Email</p>
+              <p class="email-text">Ми завжди готові допомогти.</p>
+              <a class="email" href="mailto:inhortopt@gmail.com"
+                >inhortopt@gmail.com</a
+              >
+            </div>
+            <div>
+              <img src="/phone-icon.svg" alt="phone" />
+              <p class="email-title">Телефон</p>
+              <p class="email-text">Пн-Пт з 9:00 до 17:00</p>
+              <a class="email" href="tel:+380638466546">+380 63 846 65 46</a>
+            </div>
           </div>
+
           <div>
-            <img src="/phone-icon.svg" alt="phone" />
-            <p class="email-title">Телефон</p>
-            <p class="email-text">Пн-Пт з 9:00 до 17:00</p>
-            <a class="email" href="tel:+380638466546">+380 63 846 65 46</a>
+            <img src="/pointer-ison.svg" alt="pointer" />
+            <p class="email-title">Виробництво</p>
+            <p class="email-text">Завітайте до нашого головного офісу.</p>
+            <p class="email">
+              вул. Автоклубна, 31, Запоріжжя, Запорізька область, 69000
+            </p>
           </div>
         </div>
 
-        <div>
-          <img src="/pointer-ison.svg" alt="pointer" />
-          <p class="email-title">Виробництво</p>
-          <p class="email-text">Завітайте до нашого головного офісу.</p>
-          <p class="email">
-            вул. Автоклубна, 31, Запоріжжя, Запорізька область, 69000
-          </p>
+        <div class="form-div">
+          <form class="form">
+            <label class="label">
+              Ваше ім’я
+              <input
+                v-model="email"
+                class="input"
+                type="email"
+                placeholder="Василь"
+              />
+            </label>
+
+            <label class="label">
+              Номер телефона
+              <input
+                class="input"
+                type="tel"
+                v-model="phone"
+                placeholder="+380 (00) 000 00 00"
+              />
+            </label>
+            <button class="button" type="submit">Зв'язатися з нами</button>
+          </form>
         </div>
-      </div>
-
-      <div class="form-div">
-        <form class="form">
-          <label class="label">
-            Ваше ім’я
-            <input
-              v-model="email"
-              class="input"
-              type="email"
-              placeholder="Василь"
-            />
-          </label>
-
-          <label class="label">
-            Номер телефона
-            <input
-              class="input"
-              type="tel"
-              v-model="phone"
-              placeholder="+380 (00) 000 00 00"
-            />
-          </label>
-          <button class="button" type="submit">Зв'язатися з нами</button>
-        </form>
       </div>
     </div>
-
-    <div></div>
   </div>
 </template>
 
 <style scoped>
+.wrapper {
+  background-color: #333;
+}
 .container {
+  width: 1440px;
+  margin: 0 auto;
   padding: 96px 112px;
   background-color: #333;
 }
@@ -87,6 +92,7 @@ const email = ref('');
   display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: start;
   flex-shrink: 0;
   gap: 48px;
 }
@@ -94,10 +100,14 @@ const email = ref('');
 .connection-div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 72px;
 }
-
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
 .email-phone-div {
   display: flex;
   align-items: center;

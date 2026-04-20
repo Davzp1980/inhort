@@ -89,5 +89,7 @@ import { models } from '/src/data/productList.js';
   width: 384px;
   height: 384px;
   flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
 }
 </style>

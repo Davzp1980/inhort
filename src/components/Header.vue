@@ -39,6 +39,7 @@ defineProps({
   padding: 21px 113px;
 }
 .logo {
+  margin: 0;
   width: 132px;
   height: 38px;
 }
