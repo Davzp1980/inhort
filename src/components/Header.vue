@@ -6,7 +6,7 @@ defineProps({
 
 <template>
   <div class="header">
-    <img class="logo" src="/img/logo.svg" alt="logo" />
+    <img class="logo" src="/img/Logo.svg" alt="logo" />
     <nav>
       <ul class="nav-links">
         <li class="nav-link" @click="scrollTo('models')">Моделі</li>

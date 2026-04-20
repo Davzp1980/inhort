@@ -30,12 +30,7 @@ const myCarousel = useTemplateRef('carousel');
       </div>
 
       <div class="carousel-wrapper">
-        <carousel
-          ref="carousel"
-          :items-to-show="3"
-          :snap-align="'start'"
-          :gap="32"
-        >
+        <carousel ref="carousel" :items-to-show="3" :snap-align="'start'">
           <slide v-for="review in reviews" :key="review.id">
             <ReviewItem :review="review" />
           </slide>
@@ -84,7 +79,7 @@ const myCarousel = useTemplateRef('carousel');
   }
 
   .carousel-wrapper {
-    width: 100%;
+    max-width: 1440px;
     padding: 20px 0;
   }
 }
