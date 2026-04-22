@@ -41,7 +41,7 @@ import { viewConfigurations } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .model-container {
@@ -54,7 +54,7 @@ import { viewConfigurations } from '/src/data/productList.js';
 
 .model-name-wrapper {
   display: grid;
-  grid-template-columns: 300px 1fr; /* фикс для заголовка */
+  grid-template-columns: 300px 1fr;
   align-items: start;
   column-gap: 300px;
   margin-bottom: 48px;
@@ -80,9 +80,10 @@ import { viewConfigurations } from '/src/data/productList.js';
 }
 
 .model-img-container {
+  padding-bottom: 20px;
   width: 100%;
   display: flex;
-  gap: clamp(12px, 5vw, 32px);
+  gap: 32px;
   justify-content: center;
 }
 
@@ -92,5 +93,6 @@ import { viewConfigurations } from '/src/data/productList.js';
   width: 384px;
   height: 384px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 </style>

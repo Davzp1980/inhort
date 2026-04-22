@@ -1,12 +1,12 @@
 <script setup>
 import ReviewItem from '@/components/ReviewItem.vue';
-import { Carousel, Slide } from 'vue3-carousel';
+// import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import { useTemplateRef } from 'vue';
+// import { useTemplateRef } from 'vue';
 import 'primeicons/primeicons.css';
 import { reviews } from '/src/data/productList.js';
 
-const myCarousel = useTemplateRef('carousel');
+// const myCarousel = useTemplateRef('carousel');
 </script>
 <template>
   <div class="container" id="reviews">
@@ -54,6 +54,7 @@ const myCarousel = useTemplateRef('carousel');
 
 <style scoped>
 .container {
+  margin: 0 auto;
   width: 1440px;
   padding: 60px 80px;
 }

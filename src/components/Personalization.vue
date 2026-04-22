@@ -49,7 +49,7 @@ import { personalization } from '@/data/productList.js';
 
 .model-container {
   padding-top: 80px;
-  width: 1200px;
+  width: 1216px;
 }
 .model-container:last-child {
   margin-bottom: 0;
@@ -85,7 +85,7 @@ import { personalization } from '@/data/productList.js';
 .model-img-container {
   width: 100%;
   display: flex;
-  gap: clamp(12px, 5vw, 32px);
+  gap: 32px;
   justify-content: center;
 }
 
@@ -94,6 +94,6 @@ import { personalization } from '@/data/productList.js';
   overflow: hidden;
   width: 384px;
   height: 384px;
-  flex-shrink: 0;
+  object-fit: none;
 }
 </style>

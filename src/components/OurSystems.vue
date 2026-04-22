@@ -33,7 +33,6 @@ import { ourSystems } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 60px 132px;
-  background: #f9fafb;
 }
 
 .wrapper {

@@ -13,9 +13,15 @@ import { models } from '/src/data/productList.js';
         </p>
       </div>
       <div class="model-img-container">
-        <img class="model-img" :src="product.img1" alt="photo" />
-        <img class="model-img" :src="product.img2" alt="photo" />
-        <img class="model-img" :src="product.img3" alt="photo" />
+        <div class="model-img-wrapper">
+          <img class="model-img" :src="product.img1" alt="photo" />
+        </div>
+        <div class="model-img-wrapper">
+          <img class="model-img" :src="product.img2" alt="photo" />
+        </div>
+        <div class="model-img-wrapper">
+          <img class="model-img" :src="product.img3" alt="photo" />
+        </div>
       </div>
     </div>
   </div>
@@ -37,10 +43,11 @@ import { models } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
+  margin-bottom: 80px;
 }
 
 .model-container {
-  width: 1200px;
+  width: 1216px;
   margin-bottom: 80px;
 }
 .model-container:last-child {
@@ -75,18 +82,21 @@ import { models } from '/src/data/productList.js';
 }
 
 .model-img-container {
+  padding-bottom: 20px;
   width: 100%;
   display: flex;
   gap: 32px;
   justify-content: center;
 }
 
-.model-img {
+.model-img-wrapper {
   border-radius: 16px;
-  overflow: hidden;
+
   width: 384px;
   height: 384px;
-
-  object-fit: none;
+  overflow: hidden;
+}
+.model-img {
+  object-fit: cover;
 }
 </style>

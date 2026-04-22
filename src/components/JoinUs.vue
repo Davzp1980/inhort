@@ -73,13 +73,17 @@ const email = ref('');
   background-color: #333;
 }
 .container {
-  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1216px;
   margin: 0 auto;
-  padding: 96px 0;
+  padding: 96px 112px;
   background-color: #333;
 }
 
 .h-2 {
+  align-self: start;
   font-family: var(--font-family), sans-serif;
   font-weight: 600;
   font-size: 64px;
