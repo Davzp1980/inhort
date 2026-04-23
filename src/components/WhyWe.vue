@@ -32,7 +32,7 @@
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/gear.svg" alt="image" />
         <h2 class="why-we-item-h2">Індивідуальне виробництво</h2>
-        <p class="why-we-item-text">ШРобота з нестандартними розмірами</p>
+        <p class="why-we-item-text">Робота з нестандартними розмірами</p>
       </div>
     </div>
   </div>
