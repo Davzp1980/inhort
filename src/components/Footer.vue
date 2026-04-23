@@ -57,7 +57,7 @@ defineProps({
 
 .footer-container {
   margin: 0 auto;
-  width: 1440px;
+  width: 1216px;
   display: flex;
   align-items: center;
   justify-content: space-between;
