@@ -30,6 +30,7 @@ import { personalization } from '@/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,5 +96,34 @@ import { personalization } from '@/data/productList.js';
   width: 384px;
   height: 384px;
   object-fit: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 60px 32px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+  .model-container {
+    width: 704px;
+  }
+
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .model-img-container {
+    gap: 16px;
+  }
+
+  .model-img {
+    width: 224px;
+    height: 224px;
+  }
 }
 </style>

@@ -56,6 +56,7 @@ defineProps({
 }
 
 .footer-container {
+  box-sizing: border-box;
   margin: 0 auto;
   width: 1216px;
   display: flex;
@@ -156,5 +157,24 @@ defineProps({
   line-height: 150%;
   letter-spacing: -0.02em;
   color: #99a1af;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    width: 768px;
+    padding: 48px 32px;
+    margin: 0;
+  }
+  .nav {
+    display: none;
+  }
+
+  .contacts {
+    width: 268px;
+  }
+
+  .logo-nav-desc {
+    max-width: 197px;
+  }
 }
 </style>

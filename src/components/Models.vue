@@ -91,12 +91,43 @@ import { models } from '/src/data/productList.js';
 
 .model-img-wrapper {
   border-radius: 16px;
-
   width: 384px;
   height: 384px;
   overflow: hidden;
 }
 .model-img {
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 32px 0 32px;
+    width: 768px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+
+  .model-container {
+    width: 768px;
+  }
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 24px;
+  }
+
+  .model-img-container {
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .model-img-wrapper {
+    width: 224px;
+    height: 224px;
+  }
 }
 </style>

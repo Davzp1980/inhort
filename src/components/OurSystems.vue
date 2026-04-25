@@ -39,7 +39,7 @@ import { ourSystems } from '/src/data/productList.js';
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   row-gap: 64px;
   column-gap: 32px;
 }
@@ -57,8 +57,6 @@ import { ourSystems } from '/src/data/productList.js';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 32px;
-  column-gap: 64px;
 }
 
 .item-title {
@@ -91,8 +89,43 @@ import { ourSystems } from '/src/data/productList.js';
   margin-bottom: 80px;
 }
 .img {
+  border-radius: 16px;
   width: 540px;
   height: 540px;
-  object-fit: cover;
+  object-fit: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 60px 32px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+    margin-bottom: 64px;
+  }
+
+  .wrapper {
+    row-gap: 48px;
+    column-gap: 24px;
+  }
+
+  .ourSystems-wrapper {
+    width: 340px;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .item-container {
+    width: 340px;
+    row-gap: 48px;
+    column-gap: 24px;
+  }
+
+  .img {
+    width: 340px;
+    height: 340px;
+  }
 }
 </style>

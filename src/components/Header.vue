@@ -33,6 +33,7 @@ defineProps({
 
 <style scoped>
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,5 +92,16 @@ defineProps({
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .header {
+    box-sizing: border-box;
+    padding: 26px 32px;
+    width: 768px;
+  }
+  nav {
+    display: none;
+  }
 }
 </style>

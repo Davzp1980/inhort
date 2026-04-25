@@ -26,7 +26,7 @@ defineProps({
   border-radius: 15px;
   padding: 24px;
   width: 384px;
-  height: 420px;
+  height: auto;
   background: #f9fafb;
 }
 
@@ -59,5 +59,11 @@ defineProps({
   font-size: 16px;
   line-height: 150%;
   color: #525252;
+}
+
+@media (max-width: 768px) {
+  .review-container {
+    width: 100%;
+  }
 }
 </style>

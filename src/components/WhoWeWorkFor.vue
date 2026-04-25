@@ -6,14 +6,14 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   <div class="ourSystems">
     <div class="container" id="whoWeWorkFor">
       <h2 class="h-2">Для кого ми працюємо</h2>
-      <p class="desc">Наша дружня команда завжди готова поспілкуватися</p>
+      <p class="desc">Професійні рішення для бізнесу різних сфер</p>
       <div class="wrapper">
         <div
           v-for="product in whoWeWorkFor"
           :key="whoWeWorkFor.id"
           class="item"
         >
-          <img :src="product.img" alt="photo" />
+          <img class="img" :src="product.img" alt="photo" />
           <p class="item-desc">{{ product.desc }}</p>
         </div>
       </div>
@@ -23,6 +23,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,5 +78,39 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #0a0a0a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 768px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+
+  .desc {
+    margin-bottom: 32px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .item {
+    box-sizing: border-box;
+    padding: 24px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    height: 80px;
+  }
+
+  .img {
+    width: 32px;
+    height: 32px;
+  }
 }
 </style>

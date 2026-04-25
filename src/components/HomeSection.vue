@@ -24,7 +24,6 @@ function onOpen() {
 <style scoped>
 .container {
   width: 100%;
-
   height: 852px;
   background:
     linear-gradient(
@@ -89,5 +88,55 @@ function onOpen() {
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    box-sizing: border-box;
+    width: 768px;
+    padding: 82px 32px;
+    height: 540px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .main-content {
+    padding: 0;
+  }
+  .h1 {
+    max-width: 344px;
+    margin-bottom: 12px;
+    font-family: var(--font-family), sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+
+  .p-1 {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .p-2,
+  .p-3 {
+    font-family: var(--font-family), sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .p-2 {
+    margin-bottom: 0;
+  }
+  .button {
+    margin-bottom: 90px;
+  }
 }
 </style>

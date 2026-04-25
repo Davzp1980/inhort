@@ -54,6 +54,7 @@ import { reviews } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   margin: 0 auto;
   width: 1440px;
   padding: 60px 80px;
@@ -103,5 +104,20 @@ import { reviews } from '/src/data/productList.js';
   display: flex;
   justify-content: center;
   gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 60px 32px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+  .reviews-div {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 </style>

@@ -2,37 +2,50 @@
 <template>
   <div class="container" id="why-we">
     <h2 class="h-2">Чому саме ми</h2>
+    <p class="h2-desc">
+      Ми пропонуємо найкращі умови для професійного співробітництва
+    </p>
 
     <div class="why-we-container1">
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/opt.svg" alt="image" />
-        <h2 class="why-we-item-h2">Гуртові ціни</h2>
-        <p class="why-we-item-text">Найкращі умови для оптових покупців</p>
+        <div class="why-we-item-desc">
+          <h2 class="why-we-item-h2">Гуртові ціни</h2>
+          <p class="why-we-item-text">Найкращі умови для оптових покупців</p>
+        </div>
       </div>
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/fabric.svg" alt="image" />
-        <h2 class="why-we-item-h2">Якісні тканини</h2>
-        <p class="why-we-item-text">
-          Широкий асортимент преміальних матеріалів
-        </p>
+        <div class="why-we-item-desc">
+          <h2 class="why-we-item-h2">Якісні тканини</h2>
+          <p class="why-we-item-text">
+            Широкий асортимент преміальних матеріалів
+          </p>
+        </div>
       </div>
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/time.svg" alt="image" />
-        <h2 class="why-we-item-h2">Швидке виробництво</h2>
-        <p class="why-we-item-text">Терміни від 3 робочих днів</p>
+        <div class="why-we-item-desc">
+          <h2 class="why-we-item-h2">Швидке виробництво</h2>
+          <p class="why-we-item-text">Терміни від 3 робочих днів</p>
+        </div>
       </div>
     </div>
 
     <div class="why-we-container1 why-we-container2">
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/car.svg" alt="image" />
-        <h2 class="why-we-item-h2">Доставка</h2>
-        <p class="why-we-item-text">Безкоштовна доставка по Україні</p>
+        <div class="why-we-item-desc">
+          <h2 class="why-we-item-h2">Доставка</h2>
+          <p class="why-we-item-text">Безкоштовна доставка по Україні</p>
+        </div>
       </div>
       <div class="why-we-item">
         <img class="why-we-item-img" src="/img/gear.svg" alt="image" />
-        <h2 class="why-we-item-h2">Індивідуальне виробництво</h2>
-        <p class="why-we-item-text">Робота з нестандартними розмірами</p>
+        <div class="why-we-item-desc">
+          <h2 class="why-we-item-h2">Індивідуальне виробництво</h2>
+          <p class="why-we-item-text">Робота з нестандартними розмірами</p>
+        </div>
       </div>
     </div>
   </div>
@@ -57,7 +70,17 @@
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+}
+
+.h2-desc {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  color: #525252;
+  margin-bottom: 48px;
 }
 
 .why-we-container1 {
@@ -106,5 +129,44 @@
   line-height: 150%;
   letter-spacing: -0.02em;
   color: #4a5565;
+}
+
+@media (max-width: 768px) {
+  .container {
+    box-sizing: border-box;
+    width: 768px;
+    padding: 40px 32px;
+    margin-bottom: 0;
+  }
+  .why-we-container1 {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+
+  .h2-desc {
+    margin-bottom: 32px;
+  }
+  .why-we-item-h2 {
+    margin-bottom: 0;
+  }
+  .why-we-item {
+    width: 100%;
+    height: 120px;
+    padding: 32px;
+    flex-direction: row;
+    justify-content: start;
+    gap: 24px;
+  }
+  .why-we-item-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 </style>

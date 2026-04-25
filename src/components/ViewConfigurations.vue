@@ -95,4 +95,34 @@ import { viewConfigurations } from '/src/data/productList.js';
   flex-shrink: 0;
   object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 60px 32px 0 32px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+  .model-container {
+    width: 704px;
+  }
+
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .model-img-container {
+    gap: 16px;
+  }
+
+  .model-img {
+    width: 224px;
+    height: 224px;
+  }
+}
 </style>

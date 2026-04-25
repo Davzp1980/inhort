@@ -19,15 +19,15 @@ const email = ref('');
                 >inhortopt@gmail.com
               </a>
             </div>
-            <div>
-              <img src="/phone-icon.svg" alt="phone" />
+            <div class="content">
+              <img class="phone-icon" src="/phone-icon.svg" alt="phone" />
               <p class="email-title">Телефон</p>
               <p class="email-text">Пн-Пт з 9:00 до 17:00</p>
               <a class="email" href="tel:+380638466546">+380 63 846 65 46</a>
             </div>
           </div>
 
-          <div>
+          <div class="content">
             <img src="/pointer-ison.svg" alt="pointer" />
             <p class="email-title">Виробництво</p>
             <p class="email-text">Завітайте до нашого головного офісу.</p>
@@ -73,6 +73,7 @@ const email = ref('');
   background-color: #333;
 }
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,6 +94,12 @@ const email = ref('');
   text-align: left;
   margin-bottom: 64px;
 }
+.connection-div {
+  width: 1216px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .email-phone-container {
   display: flex;
@@ -103,12 +110,6 @@ const email = ref('');
   gap: 48px;
 }
 
-.connection-div {
-  width: 1216px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -212,5 +213,43 @@ const email = ref('');
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 704px;
+  }
+
+  .h-2 {
+    font-size: 48px;
+  }
+
+  .connection-div {
+    width: 768px;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .email-phone-container {
+    align-items: start;
+    width: 704px;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .email-phone-div {
+    display: flex;
+    align-items: flex-start;
+  }
+  .content {
+    width: 213px;
+  }
+  .phone-icon {
+    margin-top: 0;
+  }
+
+  .form-div {
+    width: 704px;
+  }
 }
 </style>
