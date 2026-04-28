@@ -97,6 +97,7 @@ import { ourSystems } from '/src/data/productList.js';
 
 @media (max-width: 768px) {
   .container {
+    margin: 0;
     width: 768px;
     padding: 60px 32px;
   }
