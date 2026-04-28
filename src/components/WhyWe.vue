@@ -134,7 +134,7 @@
 @media (min-width: 767px) and (max-width: 1439px) {
   .container {
     box-sizing: border-box;
-    width: 768px;
+    width: 100%;
     padding: 40px 32px;
     margin-bottom: 0;
   }

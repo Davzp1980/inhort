@@ -93,7 +93,7 @@ function onOpen() {
 @media (min-width: 767px) and (max-width: 1439px) {
   .container {
     box-sizing: border-box;
-    width: 768px;
+    width: 100%;
     padding: 82px 32px;
     height: 540px;
     background-size: cover;

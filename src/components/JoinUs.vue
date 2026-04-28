@@ -214,7 +214,7 @@ const email = ref('');
 
 @media (min-width: 767px) and (max-width: 1439px) {
   .wrapper {
-    width: 768px;
+    width: 100%;
   }
 
   .container {

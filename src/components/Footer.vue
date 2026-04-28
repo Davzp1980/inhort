@@ -161,7 +161,7 @@ defineProps({
 
 @media (min-width: 767px) and (max-width: 1439px) {
   .footer-container {
-    width: 768px;
+    width: 100%;
     padding: 48px 32px;
     margin: 0;
   }

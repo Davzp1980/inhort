@@ -108,7 +108,7 @@ import { reviews } from '/src/data/productList.js';
 
 @media (min-width: 767px) and (max-width: 1439px) {
   .container {
-    width: 768px;
+    width: 100%;
     padding: 60px 32px;
   }
 

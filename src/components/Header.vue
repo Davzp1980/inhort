@@ -101,7 +101,7 @@ defineProps({
   .header {
     box-sizing: border-box;
     padding: 26px 32px;
-    width: 768px;
+    width: 100%;
   }
   nav {
     display: none;
