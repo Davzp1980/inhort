@@ -113,7 +113,7 @@
 }
 
 .why-we-item-h2 {
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 140%;
@@ -131,7 +131,7 @@
   color: #4a5565;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     box-sizing: border-box;
     width: 768px;

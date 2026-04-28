@@ -212,7 +212,7 @@ const email = ref('');
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .wrapper {
     width: 768px;
   }

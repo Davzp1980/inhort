@@ -27,6 +27,7 @@ import { ourSystems } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -95,7 +96,7 @@ import { ourSystems } from '/src/data/productList.js';
   object-fit: none;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     margin: 0;
     width: 768px;

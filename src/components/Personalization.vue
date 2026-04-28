@@ -98,7 +98,7 @@ import { personalization } from '@/data/productList.js';
   object-fit: none;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     width: 768px;
     padding: 60px 32px;

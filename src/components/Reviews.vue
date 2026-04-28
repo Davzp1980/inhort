@@ -57,7 +57,7 @@ import { reviews } from '/src/data/productList.js';
   box-sizing: border-box;
   margin: 0 auto;
   width: 1440px;
-  padding: 60px 80px;
+  padding: 60px 112px;
 }
 
 .h-2 {
@@ -106,7 +106,7 @@ import { reviews } from '/src/data/productList.js';
   gap: 32px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     width: 768px;
     padding: 60px 32px;

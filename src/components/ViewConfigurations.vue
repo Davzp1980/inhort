@@ -27,6 +27,7 @@ import { viewConfigurations } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +97,7 @@ import { viewConfigurations } from '/src/data/productList.js';
   object-fit: contain;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     width: 768px;
     padding: 60px 32px 0 32px;

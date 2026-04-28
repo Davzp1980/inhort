@@ -159,7 +159,7 @@ defineProps({
   color: #99a1af;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .footer-container {
     width: 768px;
     padding: 48px 32px;

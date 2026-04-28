@@ -61,7 +61,7 @@ defineProps({
   color: #525252;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .review-container {
     width: 100%;
   }

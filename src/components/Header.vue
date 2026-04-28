@@ -93,7 +93,7 @@ defineProps({
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .header {
     box-sizing: border-box;
     padding: 26px 32px;

@@ -80,7 +80,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   color: #0a0a0a;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     width: 768px;
   }

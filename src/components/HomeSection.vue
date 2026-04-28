@@ -90,7 +90,7 @@ function onOpen() {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     box-sizing: border-box;
     width: 768px;

@@ -37,7 +37,7 @@ a {
     min-height: 1440px
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) and (max-width: 1439px) {
     .main-container {
         width: 768px;
     }

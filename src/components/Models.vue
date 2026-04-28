@@ -29,6 +29,7 @@ import { models } from '/src/data/productList.js';
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +100,7 @@ import { models } from '/src/data/productList.js';
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 767px) and (max-width: 1439px) {
   .container {
     padding: 60px 32px 0 32px;
     width: 768px;
@@ -110,7 +111,7 @@ import { models } from '/src/data/productList.js';
   }
 
   .model-container {
-    width: 768px;
+    width: 704px;
   }
   .model-name-wrapper {
     display: flex;
