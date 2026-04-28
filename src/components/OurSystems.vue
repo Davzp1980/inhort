@@ -28,7 +28,6 @@ import { ourSystems } from '/src/data/productList.js';
 <style scoped>
 .container {
   margin: 0 auto;
-  width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +35,7 @@ import { ourSystems } from '/src/data/productList.js';
 }
 
 .wrapper {
+  width: 1378px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -108,6 +108,7 @@ import { ourSystems } from '/src/data/productList.js';
   }
 
   .wrapper {
+    width: 704px;
     row-gap: 48px;
     column-gap: 24px;
   }

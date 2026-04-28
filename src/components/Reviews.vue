@@ -102,7 +102,7 @@ import { reviews } from '/src/data/productList.js';
   width: 1440px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+
   gap: 32px;
 }
 

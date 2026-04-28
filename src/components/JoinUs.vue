@@ -71,14 +71,11 @@ const email = ref('');
   display: flex;
   justify-content: center;
   background-color: #333;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .container {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1216px;
-  margin: 0 auto;
   padding: 96px 112px;
   background-color: #333;
 }
@@ -216,8 +213,13 @@ const email = ref('');
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    width: 768px;
+  }
+
   .container {
-    width: 704px;
+    padding: 64px 32px;
+    width: 768px;
   }
 
   .h-2 {
@@ -225,8 +227,10 @@ const email = ref('');
   }
 
   .connection-div {
-    width: 768px;
+    width: 704px;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 72px;
   }
 
