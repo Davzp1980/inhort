@@ -118,6 +118,11 @@ const emit = defineEmits(['openModal']);
     padding: 17px 12px;
     width: 100%;
   }
+
+  .button {
+    padding: 12px 10px;
+  }
+
   nav {
     display: none;
   }
