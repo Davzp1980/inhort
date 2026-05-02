@@ -28,6 +28,7 @@ const toast = useToast();
 
 const onSubmit = handleSubmit(values => {
   try {
+    schema.parse(values);
     console.log('Форма валидна:', values);
 
     toast.success('Успешно!', {
@@ -100,26 +101,45 @@ onMounted(() => {
           <form class="form" @submit.prevent="onSubmit">
             <label class="label">
               Ваше ім’я
-              <input
-                v-model="name"
-                class="input"
-                type="text"
-                :placeholder="nameError ? nameError : 'Василь'"
-                :class="nameError ? 'error' : ''"
-              />
+              <span class="input-wrapper">
+                <input
+                  v-model="name"
+                  class="input"
+                  type="text"
+                  placeholder="Василь"
+                  :class="nameError ? 'error' : ''"
+                />
+                <img
+                  v-if="nameError"
+                  class="error-icon"
+                  src="/error-icon.svg"
+                  alt="error"
+                />
+              </span>
+              <span class="error">{{ nameError }}</span>
             </label>
 
             <label class="label">
               Номер телефона
-              <input
-                class="input"
-                type="tel"
-                v-model="phone"
-                :placeholder="phoneError ? phoneError : '+38 (00) 000 00 00'"
-                :class="phoneError ? 'error' : ''"
-                ref="phoneInputRef"
-              />
+              <span class="input-wrapper">
+                <input
+                  class="input"
+                  type="tel"
+                  v-model="phone"
+                  placeholder="+38 (00) 000 00 00"
+                  :class="phoneError ? 'error' : ''"
+                  ref="phoneInputRef"
+                />
+                <img
+                  v-if="nameError"
+                  class="error-icon"
+                  src="/error-icon.svg"
+                  alt="error"
+                />
+              </span>
+              <span class="error">{{ phoneError }}</span>
             </label>
+
             <button class="button" type="submit">Зв'язатися з нами</button>
           </form>
         </div>
@@ -297,12 +317,16 @@ onMounted(() => {
   color: #404040;
 }
 
+.input-wrapper {
+  position: relative;
+}
+
 .input {
   box-sizing: border-box;
   border: 1px solid #d4d4d4;
   border-radius: 8px;
   padding: 12px 16px;
-  width: 508px;
+  width: 100%;
   height: 48px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
@@ -321,6 +345,11 @@ onMounted(() => {
   color: #737373;
 }
 
+.error-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
 .button {
   margin-top: 8px;
   cursor: pointer;
@@ -339,8 +368,13 @@ onMounted(() => {
   color: #fff;
 }
 
-.error::placeholder {
-  color: red;
+.error {
+  border-color: red;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #ef4444;
 }
 
 @media (min-width: 767px) and (max-width: 1439px) {
