@@ -23,6 +23,7 @@ function onOpen() {
 
 <style scoped>
 .container {
+  box-sizing: border-box;
   width: 100%;
   height: 852px;
   background:
@@ -46,6 +47,7 @@ function onOpen() {
   line-height: 100%;
   letter-spacing: -0.03em;
   color: #fff;
+  margin-bottom: 24px;
 }
 
 .p-1 {
@@ -71,7 +73,7 @@ function onOpen() {
 }
 
 .p-3 {
-  margin-bottom: 46px;
+  margin-bottom: 48px;
 }
 .button {
   cursor: pointer;
@@ -106,37 +108,55 @@ function onOpen() {
   .h1 {
     max-width: 344px;
     margin-bottom: 12px;
-    font-family: var(--font-family), sans-serif;
-    font-weight: 500;
     font-size: 64px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: #fff;
   }
 
   .p-1 {
-    font-family: var(--font-family), sans-serif;
-    font-weight: 500;
     font-size: 28px;
-    line-height: 100%;
-    letter-spacing: 0.01em;
-    color: #fff;
     margin-bottom: 24px;
   }
   .p-2,
   .p-3 {
-    font-family: var(--font-family), sans-serif;
-    font-weight: 400;
     font-size: 18px;
-    line-height: 140%;
-    letter-spacing: -0.02em;
-    color: #fff;
+    margin-bottom: 8px;
   }
   .p-2 {
     margin-bottom: 0;
   }
   .button {
+    margin-top: 32px;
     margin-bottom: 90px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    width: 100%;
+    padding: 82px 12px;
+    height: 640px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url('/img/hero-bg-mobile.png') center / cover no-repeat;
+  }
+  .main-content {
+    padding: 0;
+  }
+
+  .h1 {
+    font-size: 64px;
+    margin-bottom: 12px;
+  }
+  .p-1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .p-3 {
+    margin-bottom: 32px;
   }
 }
 </style>

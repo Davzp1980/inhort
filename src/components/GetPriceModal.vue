@@ -69,7 +69,7 @@ const phoneInputRef = ref(null);
 onMounted(() => {
   if (phoneInputRef.value) {
     IMask(phoneInputRef.value, {
-      mask: '+38 (000) 000-00-00',
+      mask: '+38 (00) 000 00 00',
     });
   }
 });
@@ -79,14 +79,13 @@ onMounted(() => {
   <Teleport to="body">
     <div class="container" @click.self="onClose">
       <div class="modal-content">
-        <h1 class="h-1">Send form</h1>
         <button class="close-btn" type="button" @click="onClose">
           <i class="pi pi-times" style="font-size: 30px; color: #b00"></i>
         </button>
 
         <form class="send-form" @submit.prevent="onSubmit">
           <label class="form-label"
-            >Ім'я
+            >Ваше ім’я
             <input
               class="input"
               type="text"
@@ -97,12 +96,12 @@ onMounted(() => {
           </label>
 
           <label class="form-label"
-            >Телефон
+            >Номер телефона
             <input
               class="input"
               type="text"
               v-model="phone"
-              :placeholder="phoneError ? phoneError : '+38 (XXX) XXX-XX-XX'"
+              :placeholder="phoneError ? phoneError : '+38 (00) 000 00 00'"
               :class="phoneError ? 'error' : ''"
               ref="phoneInputRef"
             />
@@ -142,15 +141,14 @@ onMounted(() => {
 .modal-content {
   box-sizing: border-box;
   position: relative;
-  width: 500px;
-
+  width: 572px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
-  background-color: #f7f7f8;
-  border: 1px solid #d9d9de;
-  border-radius: 8px;
+  padding: 40px 32px;
+  background-color: #fff;
+
+  border-radius: 16px;
 }
 
 .close-btn {
@@ -163,6 +161,7 @@ onMounted(() => {
 }
 
 .send-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -171,8 +170,12 @@ onMounted(() => {
 .form-label {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  width: 300px;
+  gap: 6px;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #404040;
 }
 
 .input {
@@ -194,6 +197,7 @@ onMounted(() => {
   height: 70px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: #b00;
+  margin-top: 20px;
 
   font-family: var(--font-family), sans-serif;
   font-weight: 700;

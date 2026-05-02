@@ -20,8 +20,9 @@ const scrollTo = id => {
 
 const isOpenModal = ref(false);
 
-function openModal(val) {
-  isOpenModal.value = val;
+function openModal() {
+  console.log('hello');
+  isOpenModal.value = true;
 }
 
 function closeModal() {
@@ -32,7 +33,7 @@ function closeModal() {
 <template>
   <main>
     <div class="main-container">
-      <Header :scrollTo="scrollTo" />
+      <Header :scrollTo="scrollTo" @open-modal="openModal" />
       <HomeSection :scrollTo="scrollTo" id="home" @open-modal="openModal" />
       <WhyWe id="why-we" />
       <Models id="models" />

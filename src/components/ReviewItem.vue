@@ -10,7 +10,7 @@ defineProps({
     <p class="user-review">{{ review.desc }}</p>
     <div>
       <div class="review-item-div">
-        <img :src="review.img" :alt="review.userName" />
+        <img class="user-photo" :src="review.img" :alt="review.userName" />
         <div>
           <p class="review-user-name">{{ review.userName }}</p>
           <p class="review-user-position">{{ review.position }}</p>
@@ -65,5 +65,31 @@ defineProps({
   .review-container {
     width: 100%;
   }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .review-container {
+    padding: 24px;
+    width: 336px;
+  }
+}
+.user-review {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.user-photo {
+  width: 44px;
+  height: 44px;
+}
+
+.review-user-name {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.review-user-position {
+  font-size: 14px;
+  line-height: 140%;
 }
 </style>

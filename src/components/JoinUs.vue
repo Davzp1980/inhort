@@ -1,8 +1,67 @@
 <script setup>
-import { ref } from 'vue';
+import 'primeicons/primeicons.css';
+import { useToast } from 'vue-toastification';
+import { useForm, useField } from 'vee-validate';
+import { z } from 'zod';
+import IMask from 'imask';
+import { onMounted, ref } from 'vue';
 
-const phone = ref('');
-const email = ref('');
+const isSend = ref(false);
+
+const schema = z.object({
+  name: z.string().min(1, "Ім'я повинно бути більше одниєї літери"),
+  email: z.string().email('Неверный email'),
+  phone: z
+    .string()
+    .regex(/^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
+});
+
+const { handleSubmit, setErrors } = useForm({
+  initialValues: { name: '', email: '', phone: '' },
+});
+
+const { value: name, errorMessage: nameError } = useField('name');
+const { value: email, errorMessage: emailError } = useField('email');
+const { value: phone, errorMessage: phoneError } = useField('phone');
+
+const toast = useToast();
+
+const onSubmit = handleSubmit(values => {
+  try {
+    console.log('Форма валидна:', values);
+
+    toast.success('Успешно!', {
+      position: 'top-center',
+      timeout: 2000,
+      hideProgressBar: true,
+      toastClassName: 'success-toast',
+    });
+
+    isSend.value = true;
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      const formErrors = {};
+      for (const issue of err.issues) {
+        if (issue.path.length > 0) {
+          formErrors[issue.path[0]] = issue.message;
+        }
+      }
+      setErrors(formErrors); // покажет ошибки под полями
+    } else {
+      console.error('Неизвестная ошибка:', err);
+    }
+  }
+});
+
+const phoneInputRef = ref(null);
+
+onMounted(() => {
+  if (phoneInputRef.value) {
+    IMask(phoneInputRef.value, {
+      mask: '+38 (00) 000 00 00',
+    });
+  }
+});
 </script>
 <template>
   <div class="wrapper" id="joinUs">
@@ -37,15 +96,16 @@ const email = ref('');
           </div>
         </div>
 
-        <div class="form-div">
-          <form class="form">
+        <div v-if="!isSend" class="form-div">
+          <form class="form" @submit.prevent="onSubmit">
             <label class="label">
               Ваше ім’я
               <input
-                v-model="email"
+                v-model="name"
                 class="input"
-                type="email"
-                placeholder="Василь"
+                type="text"
+                :placeholder="nameError ? nameError : 'Василь'"
+                :class="nameError ? 'error' : ''"
               />
             </label>
 
@@ -55,11 +115,25 @@ const email = ref('');
                 class="input"
                 type="tel"
                 v-model="phone"
-                placeholder="+380 (00) 000 00 00"
+                :placeholder="phoneError ? phoneError : '+38 (00) 000 00 00'"
+                :class="phoneError ? 'error' : ''"
+                ref="phoneInputRef"
               />
             </label>
             <button class="button" type="submit">Зв'язатися з нами</button>
           </form>
+        </div>
+
+        <div v-else class="successfully-sent">
+          <div class="img-wrapper">
+            <img src="/success-icon.svg" alt="success" />
+          </div>
+          <div class="successfully-text-wrapper">
+            <h2 class="successfully-title">Ваша заявка успішно оформлена</h2>
+            <p class="successfully-desc">
+              Наші менеджери зв’яжуться з вами найближчим часом
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -150,8 +224,61 @@ const email = ref('');
   border-radius: 16px;
   padding: 40px 32px;
   width: 572px;
+  height: 397px;
+  background: #fff;
+}
+
+.successfully-sent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: 572px;
   height: 345px;
   background: #fff;
+}
+
+.img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  background: #dcfce7;
+}
+
+.successfully-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.successfully-title {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.successfully-desc {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #4a5565;
+  max-width: 300px;
 }
 
 .form {
@@ -212,6 +339,10 @@ const email = ref('');
   color: #fff;
 }
 
+.error::placeholder {
+  color: red;
+}
+
 @media (min-width: 767px) and (max-width: 1439px) {
   .wrapper {
     width: 100%;
@@ -254,6 +385,61 @@ const email = ref('');
 
   .form-div {
     width: 704px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .wrapper {
+    width: 100%;
+  }
+  .container {
+    padding: 64px 16px 0 16px;
+    width: 100%;
+  }
+
+  .h-2 {
+    font-size: 30px;
+    line-height: 127%;
+  }
+  .connection-div {
+    width: 100%;
+    flex-direction: column;
+  }
+  .email-phone-container {
+    gap: 40px;
+    padding-bottom: 48px;
+  }
+
+  .email-phone-div {
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+  }
+
+  .email-title {
+    font-size: 18px;
+    line-height: 156%;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .email-text {
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 12px;
+  }
+
+  .form-div {
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 32px 15px;
+    width: 108%;
+    height: auto;
+    background: #fff;
+  }
+
+  .input {
+    width: 100%;
   }
 }
 </style>

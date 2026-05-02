@@ -2,6 +2,8 @@
 defineProps({
   scrollTo: Function,
 });
+
+const emit = defineEmits(['openModal']);
 </script>
 
 <template>
@@ -26,7 +28,9 @@ defineProps({
         <img src="/img/phone.svg" alt="phone" />
         <p class="nav-link">+380 63 846 65 46</p>
       </div>
-      <button class="button" type="button">Зв'язатися з нами</button>
+      <button class="button" type="button" @click="emit('openModal')">
+        Зв'язатися з нами
+      </button>
     </div>
   </div>
 </template>
@@ -104,6 +108,21 @@ defineProps({
     width: 100%;
   }
   nav {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .header {
+    box-sizing: border-box;
+    padding: 17px 12px;
+    width: 100%;
+  }
+  nav {
+    display: none;
+  }
+
+  .phone-div {
     display: none;
   }
 }

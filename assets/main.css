@@ -6,6 +6,10 @@ html, body {
 
 }
 
+button{
+    display: block;
+}
+
 h1,
 h2,
 h3,
@@ -43,6 +47,13 @@ a {
         width: 100%;
     }
 
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+    .main-container {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 

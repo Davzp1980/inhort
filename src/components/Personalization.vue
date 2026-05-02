@@ -100,6 +100,7 @@ import { personalization } from '@/data/productList.js';
 
 @media (min-width: 767px) and (max-width: 1439px) {
   .container {
+    box-sizing: border-box;
     width: 100%;
     padding: 60px 32px;
   }
@@ -124,6 +125,51 @@ import { personalization } from '@/data/productList.js';
   .model-img {
     width: 224px;
     height: 224px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 12px;
+    margin-bottom: 0;
+  }
+
+  .h-2 {
+    font-size: 36px;
+  }
+  .model-container {
+    width: 100%;
+    padding-top: 40px;
+  }
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .model-name {
+    font-family: var(--font-family), sans-serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .model-description {
+    font-size: 16px;
+
+    max-width: 336px;
+  }
+
+  .model-img-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .model-img {
+    width: 336px;
+    height: 336px;
   }
 }
 </style>

@@ -13,7 +13,11 @@ import { ourSystems } from '/src/data/productList.js';
           class="ourSystems-wrapper"
         >
           <div class="item-container">
-            <img class="img" :src="product.img" alt="product.title" />
+            <picture>
+              <source media="(max-width: 766px)" :srcset="product.imgMobile" />
+
+              <img class="img" :src="product.img" :alt="product.title" />
+            </picture>
             <div class="description-div">
               <h2 class="item-title">{{ product.title }}</h2>
               <p class="item-description">{{ product.desc }}</p>
@@ -33,6 +37,18 @@ import { ourSystems } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 60px 132px;
+  background: #f9fafb;
+}
+
+.h-2 {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #171717;
+  margin-bottom: 80px;
 }
 
 .wrapper {
@@ -79,16 +95,6 @@ import { ourSystems } from '/src/data/productList.js';
   max-width: 530px;
 }
 
-.h-2 {
-  font-family: var(--font-family), sans-serif;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 140%;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: #171717;
-  margin-bottom: 80px;
-}
 .img {
   border-radius: 16px;
   width: 540px;
@@ -129,6 +135,50 @@ import { ourSystems } from '/src/data/productList.js';
   .img {
     width: 340px;
     height: 340px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 12px;
+    margin-bottom: 0;
+  }
+
+  .h-2 {
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+  }
+  .ourSystems-wrapper {
+    width: 100%;
+  }
+  .item-container {
+    width: 100%;
+  }
+
+  .img {
+    width: 336px;
+    height: 336px;
+  }
+
+  .item-title {
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+
+  .item-description {
+    font-size: 16px;
+    max-width: 336px;
   }
 }
 </style>

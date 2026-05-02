@@ -6,6 +6,9 @@ export const models = [
     img1: '/img/paris/paris1.webp',
     img2: '/img/paris/paris2.webp',
     img3: '/img/paris/paris3.webp',
+    img1Tablet: '/img/paris/paris1-tablet.webp',
+    img2Tablet: '/img/paris/paris2-tablet.webp',
+    img3Tablet: '/img/paris/paris3-tablet.webp',
   },
   {
     id: 2,
@@ -14,6 +17,9 @@ export const models = [
     img1: '/img/marsel/marsel1.webp',
     img2: '/img/marsel/marsel2.webp',
     img3: '/img/marsel/marsel3.webp',
+    img1Tablet: '/img/marsel/marsel1-tablet.webp',
+    img2Tablet: '/img/marsel/marsel2-tablet.webp',
+    img3Tablet: '/img/marsel/marsel3-tablet.webp',
   },
 
   {
@@ -23,6 +29,9 @@ export const models = [
     img1: '/img/versal/versal1.webp',
     img2: '/img/versal/versal2.webp',
     img3: '/img/versal/versal3.webp',
+    img1Tablet: '/img/versal/versal1-tablet.webp',
+    img2Tablet: '/img/versal/versal2-tablet.webp',
+    img3Tablet: '/img/versal/versal3-tablet.webp',
   },
   {
     id: 4,
@@ -31,6 +40,9 @@ export const models = [
     img1: '/img/blanNuar/blanNuar1.webp',
     img2: '/img/blanNuar/blanNuar2.webp',
     img3: '/img/blanNuar/blanNuar3.webp',
+    img1Tablet: '/img/blanNuar/blanNuar1-tablet.webp',
+    img2Tablet: '/img/blanNuar/blanNuar2-tablet.webp',
+    img3Tablet: '/img/blanNuar/blanNuar3-tablet.webp',
   },
   {
     id: 5,
@@ -39,6 +51,9 @@ export const models = [
     img1: '/img/nicaTuluza/nicaTuluza1.webp',
     img2: '/img/nicaTuluza/nicaTuluza2.webp',
     img3: '/img/nicaTuluza/nicaTuluza3.webp',
+    img1Tablet: '/img/nicaTuluza/nicaTuluza1-tablet.webp',
+    img2Tablet: '/img/nicaTuluza/nicaTuluza2-tablet.webp',
+    img3Tablet: '/img/nicaTuluza/nicaTuluza3-tablet.webp',
   },
   {
     id: 6,
@@ -47,6 +62,9 @@ export const models = [
     img1: '/img/azhur/azhur1.webp',
     img2: '/img/azhur/azhur2.webp',
     img3: '/img/azhur/azhur3.webp',
+    img1Tablet: '/img/azhur/azhur1-tablet.webp',
+    img2Tablet: '/img/azhur/azhur2-tablet.webp',
+    img3Tablet: '/img/azhur/azhur3-tablet.webp',
   },
   {
     id: 7,
@@ -55,6 +73,9 @@ export const models = [
     img1: '/img/portofino/portofino1.webp',
     img2: '/img/portofino/portofino2.webp',
     img3: '/img/portofino/portofino3.webp',
+    img1Tablet: '/img/portofino/portofino1-tablet.webp',
+    img2Tablet: '/img/portofino/portofino2-tablet.webp',
+    img3Tablet: '/img/portofino/portofino3-tablet.webp',
   },
   {
     id: 8,
@@ -63,6 +84,9 @@ export const models = [
     img1: '/img/solo/solo1.webp',
     img2: '/img/solo/solo2.webp',
     img3: '/img/solo/solo3.webp',
+    img1Tablet: '/img/solo/solo1-tablet.webp',
+    img2Tablet: '/img/solo/solo2-tablet.webp',
+    img3Tablet: '/img/solo/solo3-tablet.webp',
   },
   {
     id: 9,
@@ -71,6 +95,9 @@ export const models = [
     img1: '/img/stela/stela1.webp',
     img2: '/img/stela/stela2.webp',
     img3: '/img/stela/stela3.webp',
+    img1Tablet: '/img/stela/stela1-tablet.webp',
+    img2Tablet: '/img/stela/stela2-tablet.webp',
+    img3Tablet: '/img/stela/stela3-tablet.webp',
   },
   {
     id: 10,
@@ -79,6 +106,9 @@ export const models = [
     img1: '/img/prizma/prizma1.webp',
     img2: '/img/prizma/prizma2.webp',
     img3: '/img/prizma/prizma3.webp',
+    img1Tablet: '/img/prizma/prizma1-tablet.webp',
+    img2Tablet: '/img/prizma/prizma2-tablet.webp',
+    img3Tablet: '/img/prizma/prizma3-tablet.webp',
   },
   {
     id: 11,
@@ -87,6 +117,9 @@ export const models = [
     img1: '/img/line/line1.webp',
     img2: '/img/line/line2.webp',
     img3: '/img/line/line3.webp',
+    img1Tablet: '/img/line/line1-tablet.webp',
+    img2Tablet: '/img/line/line2-tablet.webp',
+    img3Tablet: '/img/line/line3-tablet.webp',
   },
 ];
 
@@ -157,25 +190,29 @@ export const ourSystems = [
     id: 1,
     title: 'День-ніч',
     desc: 'Система з двома карнизами на виносному кронштейну та різними категоріями тканини',
-    img: '/img/ourSystems/dayNight.png',
+    img: '/img/ourSystems/dayNight.webp',
+    imgMobile: '/img/ourSystems/dayNight-mobile.webp',
   },
   {
     id: 2,
     title: 'Твін',
     desc: 'Система на одному карнизі з двома шторами, кожна штора керується незалежно одна від одно',
-    img: '/img/ourSystems/twin.png',
+    img: '/img/ourSystems/twin.webp',
+    imgMobile: '/img/ourSystems/twin-mobile.webp',
   },
   {
     id: 3,
     title: 'Комфорт',
     desc: 'Система на одному карнизі з двома або трьома шторами (в залежності від карнізу) з окремим управлінням кожної штори',
-    img: '/img/ourSystems/comfort.png',
+    img: '/img/ourSystems/comfort.webp',
+    imgMobile: '/img/ourSystems/comfort-mobile.webp',
   },
   {
     id: 4,
     title: 'Мансарда',
     desc: 'Система з комплектом натягувачів для наклонних та мансардних вікон',
-    img: '/img/ourSystems/mansarda.png',
+    img: '/img/ourSystems/mansarda.webp',
+    imgMobile: '/img/ourSystems/mansarda-mobile.webp',
   },
 ];
 

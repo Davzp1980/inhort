@@ -34,7 +34,7 @@ defineProps({
       <div class="contacts">
         <p class="contacts-title">Контакти</p>
         <a class="contacts-text" href="tel:+380638466546">
-          <img src="/phone-red-ison.svg" alt="phone" />
+          <img class="contact-img" src="/phone-red-ison.svg" alt="phone" />
           +380 63 846 65 46
         </a>
         <a class="contacts-text" href="mailto:inhortopt@gmail.com">
@@ -103,9 +103,6 @@ defineProps({
   color: #6a7282;
 }
 
-.nav {
-}
-
 .h2-nav {
   font-family: var(--font-family), sans-serif;
   font-weight: 700;
@@ -149,7 +146,6 @@ defineProps({
 
 .contacts-text {
   display: flex;
-
   gap: 12px;
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
@@ -157,6 +153,11 @@ defineProps({
   line-height: 150%;
   letter-spacing: -0.02em;
   color: #99a1af;
+}
+
+.contact-img {
+  width: 20px;
+  height: 20px;
 }
 
 @media (min-width: 767px) and (max-width: 1439px) {
@@ -175,6 +176,38 @@ defineProps({
 
   .logo-nav-desc {
     max-width: 197px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .footer-container {
+    width: 100%;
+    padding: 40px 12px;
+    margin: 0;
+    flex-direction: column;
+    align-items: start;
+  }
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    margin-bottom: 48px;
+  }
+
+  .logo-svg {
+    width: 100px;
+    height: 33px;
+    margin-left: 0;
+    margin-bottom: 16px;
+    object-fit: cover;
+  }
+  .logo-nav-desc {
+    max-width: 197px;
+  }
+
+  .contacts-title {
+    margin-bottom: 4px;
   }
 }
 </style>

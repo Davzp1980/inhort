@@ -5,8 +5,10 @@ import { whoWeWorkFor } from '/src/data/productList.js';
 <template>
   <div class="ourSystems">
     <div class="container" id="whoWeWorkFor">
-      <h2 class="h-2">Для кого ми працюємо</h2>
-      <p class="desc">Професійні рішення для бізнесу різних сфер</p>
+      <div class="desc-wrapper">
+        <h2 class="h-2">Для кого ми працюємо</h2>
+        <p class="desc">Професійні рішення для бізнесу різних сфер</p>
+      </div>
       <div class="wrapper">
         <div
           v-for="product in whoWeWorkFor"
@@ -38,6 +40,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   letter-spacing: -0.02em;
   text-align: center;
   color: #171717;
+  margin-bottom: 12px;
 }
 
 .desc {
@@ -111,6 +114,59 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   .img {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 80px 12px;
+    margin-bottom: 0;
+  }
+
+  .desc-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .h-2 {
+    font-size: 36px;
+    text-align: start;
+  }
+
+  .desc {
+    font-size: 16px;
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 12px;
+  }
+
+  .item {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border-radius: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    background: #f9fafb;
+  }
+
+  .img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .item-desc {
+    font-size: 16px;
   }
 }
 </style>

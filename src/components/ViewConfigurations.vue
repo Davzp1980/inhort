@@ -126,4 +126,46 @@ import { viewConfigurations } from '/src/data/productList.js';
     height: 224px;
   }
 }
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 12px 0 12px;
+    margin-bottom: 0;
+  }
+
+  .h-2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  .model-container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .model-description {
+    font-size: 16px;
+    max-width: 336px;
+  }
+
+  .model-img-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+  .model-img {
+    width: 336px;
+    height: 336px;
+  }
+}
 </style>

@@ -102,7 +102,6 @@ import { reviews } from '/src/data/productList.js';
   width: 1440px;
   margin: 0 auto;
   display: flex;
-
   gap: 32px;
 }
 
@@ -118,6 +117,32 @@ import { reviews } from '/src/data/productList.js';
   .reviews-div {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 12px;
+    margin-bottom: 0;
+  }
+
+  .h-2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .desc {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .reviews-div {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
   }
 }
 </style>

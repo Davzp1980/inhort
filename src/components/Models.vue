@@ -14,13 +14,34 @@ import { models } from '/src/data/productList.js';
       </div>
       <div class="model-img-container">
         <div class="model-img-wrapper">
-          <img class="model-img" :src="product.img1" alt="photo" />
+          <picture>
+            <source
+              :srcset="product.img1Tablet"
+              media="(min-width: 767px) and (max-width: 1439px)"
+            />
+
+            <img class="model-img" :src="product.img1" alt="photo" />
+          </picture>
         </div>
         <div class="model-img-wrapper">
-          <img class="model-img" :src="product.img2" alt="photo" />
+          <picture>
+            <source
+              :srcset="product.img2Tablet"
+              media="(min-width: 767px) and (max-width: 1439px)"
+            />
+
+            <img class="model-img" :src="product.img2" alt="photo" />
+          </picture>
         </div>
         <div class="model-img-wrapper">
-          <img class="model-img" :src="product.img3" alt="photo" />
+          <picture>
+            <source
+              :srcset="product.img3Tablet"
+              media="(min-width: 767px) and (max-width: 1439px)"
+            />
+
+            <img class="model-img" :src="product.img3" alt="photo" />
+          </picture>
         </div>
       </div>
     </div>
@@ -129,6 +150,48 @@ import { models } from '/src/data/productList.js';
   .model-img-wrapper {
     width: 224px;
     height: 224px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 12px 0 12px;
+    margin-bottom: 0;
+  }
+
+  .model-container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .model-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .model-name {
+    font-size: 24px;
+  }
+  .model-description {
+    font-size: 16px;
+    max-width: 336px;
+  }
+
+  .model-img-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .model-img-wrapper {
+    width: 336px;
+    height: 336px;
+  }
+  .model-img {
+    width: 336px;
+    height: 336px;
   }
 }
 </style>

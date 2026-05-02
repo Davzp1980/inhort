@@ -56,6 +56,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 60px 112px;
 
   background: #f9fafb;
@@ -167,6 +168,44 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 766px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px 12px;
+    margin-bottom: 0;
+  }
+
+  .h-2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .h2-desc {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .why-we-container1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .why-we-item {
+    padding: 24px;
+  }
+  .why-we-item-img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  .why-we-item-h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
   }
 }
 </style>
