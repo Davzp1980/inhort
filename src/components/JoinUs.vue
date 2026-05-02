@@ -441,5 +441,9 @@ onMounted(() => {
   .input {
     width: 100%;
   }
+
+  .button {
+    padding: 0;
+  }
 }
 </style>
