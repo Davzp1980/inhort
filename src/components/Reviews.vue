@@ -132,17 +132,20 @@ import { reviews } from '/src/data/productList.js';
     font-size: 36px;
     margin-bottom: 12px;
     text-align: left;
+    max-width: 390px;
   }
 
   .desc {
     font-size: 20px;
     text-align: left;
+    max-width: 390px;
   }
 
   .reviews-div {
     width: 100%;
     flex-direction: column;
     gap: 12px;
+    align-items: center;
   }
 }
 </style>

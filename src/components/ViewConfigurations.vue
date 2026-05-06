@@ -162,6 +162,7 @@ import { viewConfigurations } from '/src/data/productList.js';
     flex-direction: column;
     gap: 12px;
     justify-content: center;
+    align-items: center;
   }
   .model-img {
     width: 336px;

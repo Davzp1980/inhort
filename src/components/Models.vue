@@ -183,6 +183,7 @@ import { models } from '/src/data/productList.js';
 
   .model-img-container {
     flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
   .model-img-wrapper {

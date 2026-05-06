@@ -89,6 +89,7 @@
   display: flex;
   gap: 32px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 32px;
 }
 .why-we-container2 {
@@ -177,16 +178,23 @@
     width: 100%;
     padding: 40px 12px;
     margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .h-2 {
     font-size: 36px;
     margin-bottom: 12px;
+    max-width: 390px;
   }
   .h2-desc {
     font-size: 16px;
     margin-bottom: 32px;
+    max-width: 390px;
+    text-align: left;
   }
+
   .why-we-container1 {
     width: 100%;
     display: flex;

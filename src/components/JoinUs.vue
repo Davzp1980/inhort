@@ -29,7 +29,6 @@ const toast = useToast();
 const onSubmit = handleSubmit(values => {
   try {
     schema.parse(values);
-    console.log('Форма валидна:', values);
 
     toast.success('Успешно!', {
       position: 'top-center',

@@ -149,8 +149,9 @@ import { whoWeWorkFor } from '/src/data/productList.js';
   }
 
   .item {
+    box-sizing: border-box;
     width: 100%;
-    height: 60px;
+    height: 64px;
     display: flex;
     border-radius: 16px;
     flex-direction: row;
@@ -158,6 +159,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
     justify-content: start;
     gap: 20px;
     background: #f9fafb;
+    padding: 16px;
   }
 
   .img {
