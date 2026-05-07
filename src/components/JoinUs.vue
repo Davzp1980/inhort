@@ -419,6 +419,10 @@ onMounted(() => {
   .form-div {
     width: 704px;
   }
+
+  .button {
+    padding: 12px 10px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 766px) {
