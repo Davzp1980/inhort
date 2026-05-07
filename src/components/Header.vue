@@ -110,6 +110,10 @@ const emit = defineEmits(['openModal']);
   nav {
     display: none;
   }
+
+  .button {
+    padding: 12px 10px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 766px) {
