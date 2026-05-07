@@ -148,6 +148,14 @@ export const personalization = [
     img2: '/img/falshShtoru/falshShtoru2.webp',
     img3: '/img/falshShtoru/falshShtoru3.webp',
   },
+  {
+    id: 4,
+    title: 'Штори з підкладою',
+    desc: "Вишукана модель з м'якими складками, що створює ефект легкості та повітряності",
+    img1: '/img/shtoruZpidkladrou/shtoruZPidklsdkou1.webp',
+    img2: '/img/shtoruZpidkladrou/shtoruZPidklsdkou2.webp',
+    img3: '/img/shtoruZpidkladrou/shtoruZPidklsdkou3.webp',
+  },
 ];
 
 export const viewConfigurations = [

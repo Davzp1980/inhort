@@ -125,6 +125,7 @@ import { personalization } from '@/data/productList.js';
   .model-img {
     width: 224px;
     height: 224px;
+    object-fit: contain;
   }
 }
 
