@@ -187,7 +187,7 @@
   }
 
   .mobile-header {
-    width: 384px;
+    width: 336px;
   }
 
   .h-2 {
@@ -212,6 +212,7 @@
     margin-bottom: 12px;
   }
   .why-we-item {
+    width: 336px;
     padding: 24px;
   }
   .why-we-item-img {
