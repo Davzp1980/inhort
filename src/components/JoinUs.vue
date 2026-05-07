@@ -13,7 +13,7 @@ const schema = z.object({
   email: z.string().email('Неверный email'),
   phone: z
     .string()
-    .regex(/^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
+    .regex(/^\+38\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/, 'Введіть номер телефону'),
 });
 
 const { handleSubmit, setErrors } = useForm({
@@ -58,7 +58,7 @@ const phoneInputRef = ref(null);
 onMounted(() => {
   if (phoneInputRef.value) {
     IMask(phoneInputRef.value, {
-      mask: '+38 (00) 000 00 00',
+      mask: '+38 (000) 000 00 00',
     });
   }
 });
@@ -125,7 +125,7 @@ onMounted(() => {
                   class="input"
                   type="tel"
                   v-model="phone"
-                  placeholder="+38 (00) 000 00 00"
+                  placeholder="+38 (000) 000 00 00"
                   :class="phoneError ? 'error' : ''"
                   ref="phoneInputRef"
                 />

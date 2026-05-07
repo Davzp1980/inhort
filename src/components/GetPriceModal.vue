@@ -18,7 +18,7 @@ const schema = z.object({
   email: z.string().email('Неверный email'),
   phone: z
     .string()
-    .regex(/^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
+    .regex(/^\+380 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
 });
 
 // 2️⃣ Создаем форму через vee-validate
@@ -69,7 +69,7 @@ const phoneInputRef = ref(null);
 onMounted(() => {
   if (phoneInputRef.value) {
     IMask(phoneInputRef.value, {
-      mask: '+38 (00) 000 00 00',
+      mask: '+38 (000) 000 00 00',
     });
   }
 });
@@ -101,7 +101,7 @@ onMounted(() => {
               class="input"
               type="text"
               v-model="phone"
-              :placeholder="phoneError ? phoneError : '+38 (00) 000 00 00'"
+              :placeholder="phoneError ? phoneError : '+38 (000) 000 00 00'"
               :class="phoneError ? 'error' : ''"
               ref="phoneInputRef"
             />
