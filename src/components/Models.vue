@@ -3,7 +3,9 @@ import { models } from '/src/data/productList.js';
 </script>
 <template>
   <div class="container" id="personalization">
-    <h2 class="h-2">Наші моделі</h2>
+    <div class="title-header">
+      <h2 class="h-2">Наші моделі</h2>
+    </div>
 
     <div v-for="product in models" :key="models.id" class="model-container">
       <div class="model-name-wrapper">
@@ -161,12 +163,23 @@ import { models } from '/src/data/productList.js';
     margin-bottom: 0;
   }
 
+  .title-header {
+    width: 336px;
+  }
+  .h-2 {
+    font-size: 36px;
+    text-align: start;
+  }
   .model-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-bottom: 40px;
   }
 
   .model-name-wrapper {
+    width: 336px;
     display: flex;
     flex-direction: column;
     gap: 12px;

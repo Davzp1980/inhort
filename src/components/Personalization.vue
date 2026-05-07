@@ -5,8 +5,9 @@ import { personalization } from '@/data/productList.js';
 <template>
   <div class="personalization">
     <div class="container" id="models">
-      <h2 class="h-2">Персоналізація</h2>
-
+      <div class="title-header">
+        <h2 class="h-2">Персоналізація</h2>
+      </div>
       <div
         v-for="product in personalization"
         :key="product.id"
@@ -137,14 +138,23 @@ import { personalization } from '@/data/productList.js';
     margin-bottom: 0;
   }
 
+  .title-header {
+    width: 336px;
+  }
+
   .h-2 {
     font-size: 36px;
+    text-align: start;
   }
   .model-container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 336px;
     padding-top: 40px;
   }
   .model-name-wrapper {
+    width: 336px;
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;

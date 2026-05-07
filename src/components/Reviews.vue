@@ -10,8 +10,10 @@ import { reviews } from '/src/data/productList.js';
 </script>
 <template>
   <div class="container" id="reviews">
-    <h2 class="h-2">Відгуки наших клієнтів</h2>
-    <p class="desc">Наша дружня команда завжди готова поспілкуватися</p>
+    <div class="header-title">
+      <h2 class="h-2">Відгуки наших клієнтів</h2>
+      <p class="desc">Наша дружня команда завжди готова поспілкуватися</p>
+    </div>
     <div class="reviews-div">
       <ReviewItem
         v-for="reviews in reviews"
@@ -122,10 +124,17 @@ import { reviews } from '/src/data/productList.js';
 
 @media (min-width: 320px) and (max-width: 766px) {
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     box-sizing: border-box;
-    width: 100%;
+    width: 336px;
     padding: 60px 12px;
     margin-bottom: 0;
+  }
+
+  .header-title {
+    width: 336px;
   }
 
   .h-2 {

@@ -3,8 +3,9 @@ import { viewConfigurations } from '/src/data/productList.js';
 </script>
 <template>
   <div class="container" id="viewConfigurations">
-    <h2 class="h-2">Конфігурації вигляду</h2>
-
+    <div class="title-header">
+      <h2 class="h-2">Конфігурації вигляду</h2>
+    </div>
     <div
       v-for="product in viewConfigurations"
       :key="product.id"
@@ -135,20 +136,33 @@ import { viewConfigurations } from '/src/data/productList.js';
     margin-bottom: 0;
   }
 
+  .title-header {
+    width: 336px;
+  }
+
   .h-2 {
     font-size: 36px;
     margin-bottom: 40px;
+    text-align: start;
   }
   .model-container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 336px;
     margin-bottom: 40px;
   }
 
   .model-name-wrapper {
+    width: 336px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 32px;
+  }
+
+  .model-name {
+    font-size: 24px;
   }
 
   .model-description {

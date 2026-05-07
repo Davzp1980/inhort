@@ -1,10 +1,12 @@
 <script setup></script>
 <template>
   <div class="container" id="why-we">
-    <h2 class="h-2">Чому саме ми</h2>
-    <p class="h2-desc">
-      Ми пропонуємо найкращі умови для професійного співробітництва
-    </p>
+    <div class="mobile-header">
+      <h2 class="h-2">Чому саме ми</h2>
+      <p class="h2-desc">
+        Ми пропонуємо найкращі умови для професійного співробітництва
+      </p>
+    </div>
 
     <div class="why-we-container1">
       <div class="why-we-item">
@@ -180,19 +182,25 @@
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-header {
+    width: 384px;
   }
 
   .h-2 {
     font-size: 36px;
     margin-bottom: 12px;
-    max-width: 390px;
+    width: 336px;
+    text-align: start;
   }
   .h2-desc {
     font-size: 16px;
     margin-bottom: 32px;
-    max-width: 390px;
-    text-align: left;
+    width: 336px;
+    text-align: start;
   }
 
   .why-we-container1 {
