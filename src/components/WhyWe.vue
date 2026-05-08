@@ -146,6 +146,7 @@
     flex-direction: column;
     gap: 12px;
     margin-bottom: 12px;
+    max-width: 704px;
   }
 
   .h-2 {

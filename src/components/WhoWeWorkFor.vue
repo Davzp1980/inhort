@@ -100,6 +100,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
     flex-direction: column;
     width: 100%;
     gap: 12px;
+    max-width: 704px;
   }
 
   .item {

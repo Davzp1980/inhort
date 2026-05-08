@@ -117,7 +117,7 @@ import { reviews } from '/src/data/productList.js';
     font-size: 48px;
   }
   .reviews-div {
-    width: 100%;
+    max-width: 704px;
     flex-direction: column;
   }
 }
