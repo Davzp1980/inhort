@@ -12,11 +12,21 @@ const toast = useToast();
 
 const validationSchema = toTypedSchema(
   zod.object({
-    name: zod.string().min(3, { message: 'This is required' }),
+    name: zod
+      .string({
+        required_error: 'Ім’я обов’язкове',
+        invalid_type_error: 'Невірне ім’я',
+      })
+      .min(3, { message: 'Ім’я повинно містити щонайменше три літери' }),
 
-    phone: zod.string().refine(val => val.includes('+380'), {
-      message: 'Invalid phone',
-    }),
+    phone: zod
+      .string({
+        required_error: 'Номер телефона обов’язковий',
+        invalid_type_error: 'Не вірний номер телефона',
+      })
+      .regex(/^\+380\s\(\d{2}\)\s\d{3}\s\d{2}\s\d{2}$/, {
+        message: 'Формат номера: +380 (00) 000 00 00',
+      }),
   })
 );
 
