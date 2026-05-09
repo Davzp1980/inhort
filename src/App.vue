@@ -21,7 +21,6 @@ const scrollTo = id => {
 const isOpenModal = ref(false);
 
 function openModal() {
-  console.log('hello');
   isOpenModal.value = true;
 }
 

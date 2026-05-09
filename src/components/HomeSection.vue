@@ -3,7 +3,7 @@ defineProps({
   scrollTo: Function,
 });
 
-const emit = defineEmits(['open-modal']);
+const emit = defineEmits(['openModal']);
 
 function onOpen() {
   emit('open-modal', true);
@@ -16,7 +16,9 @@ function onOpen() {
       <p class="p-1">гуртом вiд виробника</p>
       <p class="p-2">Для салонів, дизайнерів, підрядників.</p>
       <p class="p-3">Стабільні терміни, сучасний дизайн, бездоганна якість</p>
-      <button class="button" type="button">Зв'язатися з нами</button>
+      <button class="button" type="button" @click="emit('openModal')">
+        Зв'язатися з нами
+      </button>
     </div>
   </div>
 </template>

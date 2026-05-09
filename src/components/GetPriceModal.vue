@@ -5,6 +5,8 @@ import { useForm, useField } from 'vee-validate';
 import { z } from 'zod';
 import IMask from 'imask';
 import { onMounted, ref } from 'vue';
+import { toTypedSchema } from '@vee-validate/zod';
+import * as zod from 'zod';
 
 const props = defineProps({
   closeModal: {
@@ -21,58 +23,60 @@ const schema = z.object({
     .regex(/^\+380 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введіть номер телефону'),
 });
 
-// 2️⃣ Создаем форму через vee-validate
-const { handleSubmit, setErrors } = useForm({
-  initialValues: { name: '', email: '', phone: '' },
+const phoneInputRef = ref(null);
+const toast = useToast();
+
+const validationSchema = toTypedSchema(
+  zod.object({
+    name: zod.string().min(3, { message: 'This is required' }),
+
+    phone: zod.string().refine(val => val.includes('+380'), {
+      message: 'Invalid phone',
+    }),
+  })
+);
+
+const { handleSubmit, errors, setFieldValue } = useForm({
+  validationSchema,
 });
 
-// Поля формы
-const { value: name, errorMessage: nameError } = useField('name');
-const { value: email, errorMessage: emailError } = useField('email');
-const { value: phone, errorMessage: phoneError } = useField('phone');
+const { value: name } = useField('name');
+const { value: phone } = useField('phone');
+
+let mask = null;
+onMounted(() => {
+  const input = phoneInputRef.value;
+  if (!input) return;
+
+  input.addEventListener('focus', () => {
+    if (mask) return;
+
+    mask = IMask(input, {
+      mask: '+{380} (00) 000 00 00',
+    });
+
+    mask.on('accept', () => {
+      setFieldValue('phone', mask.value);
+    });
+
+    mask.value = '+380 ';
+  });
+});
+
+const onSubmit = handleSubmit(values => {
+  console.log(values);
+  toast.success('Ваші реквізити успішно відправлено!', {
+    position: 'top-center',
+    timeout: 2000,
+    hideProgressBar: true,
+    toastClassName: 'success-toast',
+  });
+  props.closeModal();
+});
 
 function onClose() {
   props.closeModal();
 }
-const toast = useToast();
-
-const onSubmit = handleSubmit(values => {
-  try {
-    schema.parse(values); // Zod валидация
-    console.log('Форма валидна:', values);
-    toast.success('Успешно!', {
-      position: 'top-center',
-      timeout: 2000,
-      hideProgressBar: true,
-      toastClassName: 'success-toast',
-    });
-    props.closeModal();
-  } catch (err) {
-    if (err instanceof z.ZodError) {
-      const formErrors = {};
-      for (const issue of err.issues) {
-        // ⚠️ используем `issues`, а не `errors`
-        if (issue.path.length > 0) {
-          formErrors[issue.path[0]] = issue.message;
-        }
-      }
-      setErrors(formErrors); // покажет ошибки под полями
-    } else {
-      console.error('Неизвестная ошибка:', err);
-    }
-  }
-});
-
-// 🔹 Маска телефона
-const phoneInputRef = ref(null);
-
-onMounted(() => {
-  if (phoneInputRef.value) {
-    IMask(phoneInputRef.value, {
-      mask: '+38 (000) 000 00 00',
-    });
-  }
-});
 </script>
 
 <template>
@@ -83,43 +87,51 @@ onMounted(() => {
           <i class="pi pi-times" style="font-size: 30px; color: #b00"></i>
         </button>
 
-        <form class="send-form" @submit.prevent="onSubmit">
-          <label class="form-label"
-            >Ваше ім’я
-            <input
-              class="input"
-              type="text"
-              v-model="name"
-              :placeholder="nameError ? nameError : 'Введіть ваше ім\'я'"
-              :class="nameError ? 'error' : ''"
-            />
-          </label>
+        <div v-if="!isSend" class="form-div">
+          <form class="form" @submit="onSubmit">
+            <label class="label">
+              Ваше ім’я
+              <span class="input-wrapper">
+                <input
+                  v-model="name"
+                  class="input"
+                  type="text"
+                  placeholder="Василь"
+                  :class="errors.name ? 'error' : ''"
+                />
+                <img
+                  v-if="errors.name"
+                  class="error-icon"
+                  src="/error-icon.svg"
+                  alt="error"
+                />
+              </span>
+              <span class="error">{{ errors.name }}</span>
+            </label>
 
-          <label class="form-label"
-            >Номер телефона
-            <input
-              class="input"
-              type="text"
-              v-model="phone"
-              :placeholder="phoneError ? phoneError : '+38 (000) 000 00 00'"
-              :class="phoneError ? 'error' : ''"
-              ref="phoneInputRef"
-            />
-          </label>
+            <label class="label">
+              Номер телефона
+              <span class="input-wrapper">
+                <input
+                  class="input"
+                  type="tel"
+                  placeholder="+380 (00) 000 00 00"
+                  :class="errors.phone ? 'error' : ''"
+                  ref="phoneInputRef"
+                />
+                <img
+                  v-if="errors.phone"
+                  class="error-icon"
+                  src="/error-icon.svg"
+                  alt="error"
+                />
+              </span>
+              <span class="error">{{ errors.phone }}</span>
+            </label>
 
-          <label class="form-label">
-            Email
-            <input
-              class="input"
-              type="email"
-              v-model="email"
-              :placeholder="emailError ? emailError : 'Введіть email'"
-              :class="emailError ? 'error' : ''"
-            />
-          </label>
-
-          <button class="submit-btn" type="submit">Відправити</button>
-        </form>
+            <button class="button" type="submit">Зв'язатися з нами</button>
+          </form>
+        </div>
       </div>
     </div>
   </Teleport>
@@ -160,14 +172,20 @@ onMounted(() => {
   right: 20px;
 }
 
-.send-form {
-  width: 100%;
+.form-div {
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: 572px;
+  height: auto;
+  background: #fff;
+}
+.form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
 }
-
-.form-label {
+.label {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -178,30 +196,87 @@ onMounted(() => {
   color: #404040;
 }
 
+.input-wrapper {
+  position: relative;
+}
+
 .input {
-  padding-left: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  height: 48px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background: #fff;
+  outline: none;
+
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #171717;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #737373;
+}
+
+.error-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.button {
+  margin-top: 8px;
+  cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: rgba(5, 5, 5, 0.1);
-  height: 40px;
+  padding: 18px 34px;
+  width: 100%;
+  height: 61px;
+  background: #b00;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+}
+
+.error {
+  border-color: red;
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ef4444;
 }
 
 .error::placeholder {
   color: red;
 }
 
-.submit-btn {
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  height: 70px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: #b00;
-  margin-top: 20px;
+@media (min-width: 767px) and (max-width: 1439px) {
+}
 
-  font-family: var(--font-family), sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: #fff;
+@media (min-width: 320px) and (max-width: 766px) {
+  .form-div {
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 32px 15px;
+    width: 108%;
+    height: auto;
+    background: #fff;
+  }
 }
 </style>

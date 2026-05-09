@@ -1,66 +1,63 @@
 <script setup>
-import 'primeicons/primeicons.css';
+import { useField, useForm } from 'vee-validate';
+import { toTypedSchema } from '@vee-validate/zod';
+import * as zod from 'zod';
+import { onMounted, ref, watch } from 'vue';
 import { useToast } from 'vue-toastification';
-import { useForm, useField } from 'vee-validate';
-import { z } from 'zod';
 import IMask from 'imask';
-import { onMounted, ref } from 'vue';
 
 const isSend = ref(false);
-
-const schema = z.object({
-  name: z.string().min(1, "Ім'я повинно бути більше одниєї літери"),
-  email: z.string().email('Неверный email'),
-  phone: z
-    .string()
-    .regex(/^\+38\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/, 'Введіть номер телефону'),
-});
-
-const { handleSubmit, setErrors } = useForm({
-  initialValues: { name: '', email: '', phone: '' },
-});
-
-const { value: name, errorMessage: nameError } = useField('name');
-const { value: email, errorMessage: emailError } = useField('email');
-const { value: phone, errorMessage: phoneError } = useField('phone');
-
+const phoneInputRef = ref(null);
 const toast = useToast();
 
-const onSubmit = handleSubmit(values => {
-  try {
-    schema.parse(values);
+const validationSchema = toTypedSchema(
+  zod.object({
+    name: zod.string().min(3, { message: 'This is required' }),
 
-    toast.success('Успешно!', {
-      position: 'top-center',
-      timeout: 2000,
-      hideProgressBar: true,
-      toastClassName: 'success-toast',
-    });
+    phone: zod.string().refine(val => val.includes('+380'), {
+      message: 'Invalid phone',
+    }),
+  })
+);
 
-    isSend.value = true;
-  } catch (err) {
-    if (err instanceof z.ZodError) {
-      const formErrors = {};
-      for (const issue of err.issues) {
-        if (issue.path.length > 0) {
-          formErrors[issue.path[0]] = issue.message;
-        }
-      }
-      setErrors(formErrors); // покажет ошибки под полями
-    } else {
-      console.error('Неизвестная ошибка:', err);
-    }
-  }
+const { handleSubmit, errors, setFieldValue } = useForm({
+  validationSchema,
 });
 
-const phoneInputRef = ref(null);
+const { value: name } = useField('name');
+const { value: phone } = useField('phone');
 
+let mask = null;
 onMounted(() => {
-  if (phoneInputRef.value) {
-    IMask(phoneInputRef.value, {
-      mask: '+38 (000) 000 00 00',
+  const input = phoneInputRef.value;
+  if (!input) return;
+
+  input.addEventListener('focus', () => {
+    if (mask) return;
+
+    mask = IMask(input, {
+      mask: '+{380} (00) 000 00 00',
     });
-  }
+
+    mask.on('accept', () => {
+      setFieldValue('phone', mask.value);
+    });
+
+    mask.value = '+380 ';
+  });
+});
+
+const onSubmit = handleSubmit(values => {
+  console.log(values);
+  toast.success('Ваші реквізити успішно відправлено!', {
+    position: 'top-center',
+    timeout: 2000,
+    hideProgressBar: true,
+    toastClassName: 'success-toast',
+  });
+
+  isSend.value = true;
+  console.log(values);
 });
 </script>
 <template>
@@ -97,7 +94,7 @@ onMounted(() => {
         </div>
 
         <div v-if="!isSend" class="form-div">
-          <form class="form" @submit.prevent="onSubmit">
+          <form class="form" @submit="onSubmit">
             <label class="label">
               Ваше ім’я
               <span class="input-wrapper">
@@ -106,16 +103,16 @@ onMounted(() => {
                   class="input"
                   type="text"
                   placeholder="Василь"
-                  :class="nameError ? 'error' : ''"
+                  :class="errors.name ? 'error' : ''"
                 />
                 <img
-                  v-if="nameError"
+                  v-if="errors.name"
                   class="error-icon"
                   src="/error-icon.svg"
                   alt="error"
                 />
               </span>
-              <span class="error">{{ nameError }}</span>
+              <span class="error">{{ errors.name }}</span>
             </label>
 
             <label class="label">
@@ -124,19 +121,18 @@ onMounted(() => {
                 <input
                   class="input"
                   type="tel"
-                  v-model="phone"
-                  placeholder="+38 (000) 000 00 00"
-                  :class="phoneError ? 'error' : ''"
+                  placeholder="+380 (00) 000 00 00"
+                  :class="errors.phone ? 'error' : ''"
                   ref="phoneInputRef"
                 />
                 <img
-                  v-if="nameError"
+                  v-if="errors.phone"
                   class="error-icon"
                   src="/error-icon.svg"
                   alt="error"
                 />
               </span>
-              <span class="error">{{ phoneError }}</span>
+              <span class="error">{{ errors.phone }}</span>
             </label>
 
             <button class="button" type="submit">Зв'язатися з нами</button>
@@ -330,6 +326,12 @@ onMounted(() => {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
   outline: none;
+
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #171717;
 }
 
 .input:focus {
@@ -371,8 +373,8 @@ onMounted(() => {
   border-color: red;
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 143%;
+  font-size: 16px;
+  line-height: 150%;
   color: #ef4444;
 }
 
