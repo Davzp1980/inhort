@@ -183,7 +183,7 @@ defineProps({
   .footer-container {
     margin: 0 auto;
     width: 336px;
-    padding: 40px 12px;
+    padding: 40px 0;
     flex-direction: column;
     align-items: start;
   }
