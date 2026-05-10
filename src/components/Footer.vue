@@ -181,9 +181,9 @@ defineProps({
 
 @media (min-width: 320px) and (max-width: 766px) {
   .footer-container {
-    width: 100%;
+    margin: 0 auto;
+    width: 336px;
     padding: 40px 12px;
-    margin: 0;
     flex-direction: column;
     align-items: start;
   }

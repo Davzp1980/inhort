@@ -443,7 +443,8 @@ const onSubmit = handleSubmit(values => {
   }
   .container {
     padding: 64px 16px 0 16px;
-    width: 100%;
+    width: 336px;
+    margin: 0 auto;
   }
 
   .h-2 {
@@ -482,9 +483,14 @@ const onSubmit = handleSubmit(values => {
     box-sizing: border-box;
     border-radius: 0;
     padding: 32px 15px;
-    width: 108%;
+    width: 100dvw;
     height: auto;
     background: #fff;
+  }
+
+  .form {
+    width: 336px;
+    margin: 0 auto;
   }
 
   .input {

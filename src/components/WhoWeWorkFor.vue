@@ -120,8 +120,9 @@ import { whoWeWorkFor } from '/src/data/productList.js';
 
 @media (min-width: 320px) and (max-width: 766px) {
   .container {
+    margin: 0 auto;
+    width: 336px;
     box-sizing: border-box;
-    width: 100%;
     padding: 80px 12px;
     margin-bottom: 0;
   }
