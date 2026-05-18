@@ -47,7 +47,7 @@ export const models = [
   {
     id: 5,
     title: 'Ніцца та Тулуза',
-    desc: 'Модель «БЛАН НУАР» з горизонтальним комбінуванням різних категорій тканин. В системі ТВІН і ДЕНЬ-НІЧ полоски тюлевої і більш щільної тканини знаходяться одна напроти одної',
+    desc: 'Ніцца та Тулуза це дві моделі, складки в яких ховаються одна за одну, зі зворотного боку.',
     img1: '/img/nicaTuluza/nicaTuluza1.webp',
     img2: '/img/nicaTuluza/nicaTuluza2.webp',
     img3: '/img/nicaTuluza/nicaTuluza3.webp',
@@ -91,7 +91,7 @@ export const models = [
   {
     id: 9,
     title: 'Стелла',
-    desc: "Витончена модель з унікальним плісируванням, що додає об'єму та текстури",
+    desc: 'Модель з кантами які нашиваються по боках, канти можна робити з будь-якої тканини, репсової стрічки або разом',
     img1: '/img/stela/stela1.webp',
     img2: '/img/stela/stela2.webp',
     img3: '/img/stela/stela3.webp',
@@ -102,7 +102,7 @@ export const models = [
   {
     id: 10,
     title: 'Призма',
-    desc: "Сучасний геометричний дизайн для стильних та інноваційних інтер'єрів",
+    desc: 'Модель з кантами які нашиваються по боках та низу, канти можна робити з будь-якої тканини, репсової стрічки або разом',
     img1: '/img/prizma/prizma1.webp',
     img2: '/img/prizma/prizma2.webp',
     img3: '/img/prizma/prizma3.webp',
@@ -113,7 +113,7 @@ export const models = [
   {
     id: 11,
     title: 'Лайн',
-    desc: 'Традиційна модель, що поєднує перевірені роками рішення та надійність',
+    desc: 'Модель з кантом який нашивається по центру, канти можна робити з будь-якої тканини, репсової стрічки або разом',
     img1: '/img/line/line1.webp',
     img2: '/img/line/line2.webp',
     img3: '/img/line/line3.webp',
@@ -127,7 +127,7 @@ export const personalization = [
   {
     id: 1,
     title: 'Фотодрук',
-    desc: "Вишукана модель з м'якими складками, що створює ефект легкості та повітряності",
+    desc: 'Відшиваємо римські штори з принтом, фотодруком, логотипом, макетом клієнта',
     img1: '/img/photoPrint/photoPrint1.webp',
     img2: '/img/photoPrint/photoPrint2.webp',
     img3: '/img/photoPrint/photoPrint3.webp',
@@ -135,7 +135,7 @@ export const personalization = [
   {
     id: 2,
     title: 'Пошив з тканини замовника',
-    desc: 'Багата на деталі модель в італійському стилі з розкішними драпіруваннями',
+    desc: 'Відшиваємо штори з вашої тканини ',
     img1: '/img/customMade/customMade1.webp',
     img2: '/img/customMade/customMade2.webp',
     img3: '/img/customMade/customMade3.webp',
@@ -143,7 +143,7 @@ export const personalization = [
   {
     id: 3,
     title: 'Фальшштори та трапеції',
-    desc: 'Елегантна та практична модель, ідеальна для комерційних приміщень',
+    desc: 'Відшиваємо штори нестандартних конфігурацій',
     img1: '/img/falshShtoru/falshShtoru1.webp',
     img2: '/img/falshShtoru/falshShtoru2.webp',
     img3: '/img/falshShtoru/falshShtoru3.webp',
@@ -151,7 +151,7 @@ export const personalization = [
   {
     id: 4,
     title: 'Штори з підкладою',
-    desc: "Вишукана модель з м'якими складками, що створює ефект легкості та повітряності",
+    desc: 'Відшиваємо штори з підкладою ',
     img1: '/img/shtoruZpidkladrou/shtoruZPidklsdkou1.webp',
     img2: '/img/shtoruZpidkladrou/shtoruZPidklsdkou2.webp',
     img3: '/img/shtoruZpidkladrou/shtoruZPidklsdkou3.webp',
@@ -162,7 +162,7 @@ export const viewConfigurations = [
   {
     id: 1,
     title: 'Стандарт',
-    desc: 'Модель з бантами або метеликами, з нижньою фалдою, відступ канту 150мм, ширина канту 45мм',
+    desc: 'Стандартна система, з тасьмою та прутом',
     img1: '/img/standart/standart1.png',
     img2: '/img/standart/standart2.png',
     img3: '/img/standart/standart3.png',
@@ -170,7 +170,7 @@ export const viewConfigurations = [
   {
     id: 2,
     title: 'Куліска',
-    desc: 'Модель з бантами або метеликами, без нижньої фалди, відступ канту 150мм, ширина канту 45мм',
+    desc: 'Спеціальна кишеня в яку ховаєтся прут',
     img1: '/img/kuliska/kuliska1.png',
     img2: '/img/kuliska/kuliska2.png',
     img3: '/img/kuliska/kuliska3.png',
@@ -178,7 +178,7 @@ export const viewConfigurations = [
   {
     id: 3,
     title: 'Без прутів',
-    desc: "Елегантна класична модель з вишуканими драпіруваннями, яка додасть розкоші будь-якому інтер'єру",
+    desc: 'Штора без прутів, нитки проходять чарез вертикальну тасьму ',
     img1: '/img/bezPrutiv/bezPrutiv1.png',
     img2: '/img/bezPrutiv/bezPrutiv2.png',
     img3: '/img/bezPrutiv/bezPrutiv3.png',
@@ -186,7 +186,7 @@ export const viewConfigurations = [
   {
     id: 4,
     title: 'Каскад',
-    desc: 'Сучасний мінімалістичний дизайн, що поєднує функціональність та естетику',
+    desc: 'В розправленому положенні на шторі будуть складки',
     img1: '/img/kaskad/kaskad1.png',
     img2: '/img/kaskad/kaskad2.png',
     img3: '/img/kaskad/kaskad3.png',
@@ -204,7 +204,7 @@ export const ourSystems = [
   {
     id: 2,
     title: 'Твін',
-    desc: 'Система на одному карнизі з двома шторами, кожна штора керується незалежно одна від одно',
+    desc: 'Система на одному карнизі з двома шторами, кожна штора керується незалежно одна від одної',
     img: '/img/ourSystems/twin.webp',
     imgMobile: '/img/ourSystems/twin-mobile.webp',
   },
@@ -255,31 +255,23 @@ export const whoWeWorkFor = [
 export const reviews = [
   {
     id: 1,
-    desc:
-      'Дуже вдячний команді Інхорт за оперативність. Навіть у пікові сезони\n' +
-      'терміни виготовлення залишаються чіткими, що дозволяє нам впевнено\n' +
-      'планувати монтажі. Окремий плюс за широкий вибір тканин та зручний каталог\n' +
-      '      — це значно спрощує роботу з дизайнерами та замовниками',
+    desc: 'Дуже вдячний команді Інхорт за оперативність. Навіть у пікові сезони терміни виготовлення залишаються чіткими, що дозволяє нам впевнено планувати монтажі. Окремий плюс за широкий вибір тканин та зручний каталог — це значно спрощує роботу з дизайнерами та замовниками',
     img: 'img/usersPhoto/alex.png',
-    userName: 'Олексій Батькович',
+    userName: 'Олексій Ворона',
     position: 'Представник Інхорт',
   },
   {
     id: 2,
-    desc:
-      'Дуже вдячний команді Інхорт за оперативність. Навіть у пікові сезони\n' +
-      'терміни виготовлення залишаються чіткими, що дозволяє нам впевнено\n' +
-      'планувати монтажі. Окремий плюс за широкий вибір тканин та зручний каталог\n' +
-      '      — це значно спрощує роботу з дизайнерами та замовниками',
-    img: '/img/usersPhoto/lana.png',
-    userName: 'Lana Steiner',
-    position: 'Product Manager',
+    desc: 'Як представник Інхорту, я дуже задоволений рівнем сервісу. Менеджери завжди на зв’язку, швидко прораховують замовлення та допомагають із технічними нюансами складних вікон. Римські штори упаковують дуже дбайливо. Співпраця на найвищому рівні!',
+    img: '/img/usersPhoto/danulo.png',
+    userName: 'Данило Кащук',
+    position: 'Представник Інхорт',
   },
   {
     id: 3,
     desc: 'Надійна фабрика з професійним підходом. Дуже зручно, що можна замовити не тільки стандартні моделі, а й індивідуальні рішення під запити клієнта. Механізми надійні, фурнітура якісна, а саме пошиття — бездоганне. Дякуємо за плідну співпрацю та допомогу в розвитку нашого бізнесу!',
     img: '/img/usersPhoto/lana.png',
-    userName: 'Lana Steiner',
-    position: 'Product Manager',
+    userName: 'Лана Шевченко',
+    position: 'Представник Інхорт',
   },
 ];
