@@ -57,17 +57,37 @@ onMounted(() => {
   });
 });
 
-const onSubmit = handleSubmit(values => {
-  console.log(values);
-  toast.success('Ваші реквізити успішно відправлено!', {
-    position: 'top-center',
-    timeout: 2000,
-    hideProgressBar: true,
-    toastClassName: 'success-toast',
-  });
+const onSubmit = handleSubmit(async (values) => {
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
 
-  isSend.value = true;
-  console.log(values);
+    if (response.ok) {
+      toast.success('Ваші реквізити успішно відправлено!', {
+        position: 'top-center',
+        timeout: 2000,
+        hideProgressBar: true,
+        toastClassName: 'success-toast',
+      });
+      isSend.value = true;
+    } else {
+      toast.error('Помилка відправки. Спробуйте пізніше.', {
+        position: 'top-center',
+        timeout: 3000,
+      });
+    }
+  } catch (error) {
+    console.error('Submit error:', error);
+    toast.error('Помилка з\'єднання. Спробуйте пізніше.', {
+      position: 'top-center',
+      timeout: 3000,
+    });
+  }
 });
 </script>
 <template>
