@@ -2,7 +2,7 @@
 import { models } from '/src/data/productList.js';
 </script>
 <template>
-  <div class="container" id="personalization">
+  <div class="container" id="models">
     <div class="title-header">
       <h2 class="h-2">Наші моделі</h2>
     </div>
@@ -57,6 +57,7 @@ import { models } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 0 112px;
+  scroll-margin-top: 120px;
 }
 
 .h-2 {

@@ -33,6 +33,7 @@ import { viewConfigurations } from '/src/data/productList.js';
   flex-direction: column;
   align-items: center;
   padding: 60px 112px;
+  scroll-margin-top: 120px;
 }
 
 .h-2 {

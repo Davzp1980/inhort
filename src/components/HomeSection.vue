@@ -36,6 +36,7 @@ function onOpen() {
       rgba(0, 0, 0, 0) 100%
     ),
     url('/img/hero-bg1.png') center / cover no-repeat;
+  scroll-margin-top: 120px;
 }
 
 .main-content {

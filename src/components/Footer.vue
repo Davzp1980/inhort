@@ -63,6 +63,7 @@ defineProps({
   align-items: center;
   justify-content: space-between;
   padding: 60px 0;
+  scroll-margin-top: 120px;
 }
 
 .logo {

@@ -3,27 +3,25 @@ import { personalization } from '@/data/productList.js';
 </script>
 
 <template>
-  <div class="personalization">
-    <div class="container" id="models">
-      <div class="title-header">
-        <h2 class="h-2">Персоналізація</h2>
+  <div class="container" id="personalization">
+    <div class="title-header">
+      <h2 class="h-2">Персоналізація</h2>
+    </div>
+    <div
+      v-for="product in personalization"
+      :key="product.id"
+      class="model-container"
+    >
+      <div class="model-name-wrapper">
+        <h2 class="model-name">{{ product.title }}</h2>
+        <p class="model-description">
+          {{ product.desc }}
+        </p>
       </div>
-      <div
-        v-for="product in personalization"
-        :key="product.id"
-        class="model-container"
-      >
-        <div class="model-name-wrapper">
-          <h2 class="model-name">{{ product.title }}</h2>
-          <p class="model-description">
-            {{ product.desc }}
-          </p>
-        </div>
-        <div class="model-img-container">
-          <img class="model-img" :src="product.img1" alt="photo" />
-          <img class="model-img" :src="product.img2" alt="photo" />
-          <img class="model-img" :src="product.img3" alt="photo" />
-        </div>
+      <div class="model-img-container">
+        <img class="model-img" :src="product.img1" alt="photo" />
+        <img class="model-img" :src="product.img2" alt="photo" />
+        <img class="model-img" :src="product.img3" alt="photo" />
       </div>
     </div>
   </div>
@@ -37,6 +35,7 @@ import { personalization } from '@/data/productList.js';
   align-items: center;
   padding: 60px 112px;
   background: #333;
+  scroll-margin-top: 120px;
 }
 
 .h-2 {

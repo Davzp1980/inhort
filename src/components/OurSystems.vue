@@ -3,25 +3,23 @@ import { ourSystems } from '/src/data/productList.js';
 </script>
 
 <template>
-  <div class="ourSystems">
-    <div class="container" id="models">
-      <h2 class="h-2">Наші системи</h2>
-      <div class="wrapper">
-        <div
-          v-for="product in ourSystems"
-          :key="ourSystems.id"
-          class="ourSystems-wrapper"
-        >
-          <div class="item-container">
-            <picture>
-              <source media="(max-width: 766px)" :srcset="product.imgMobile" />
+  <div class="container" id="models">
+    <h2 class="h-2">Наші системи</h2>
+    <div class="wrapper">
+      <div
+        v-for="product in ourSystems"
+        :key="ourSystems.id"
+        class="ourSystems-wrapper"
+      >
+        <div class="item-container">
+          <picture>
+            <source media="(max-width: 766px)" :srcset="product.imgMobile" />
 
-              <img class="img" :src="product.img" :alt="product.title" />
-            </picture>
-            <div class="description-div">
-              <h2 class="item-title">{{ product.title }}</h2>
-              <p class="item-description">{{ product.desc }}</p>
-            </div>
+            <img class="img" :src="product.img" :alt="product.title" />
+          </picture>
+          <div class="description-div">
+            <h2 class="item-title">{{ product.title }}</h2>
+            <p class="item-description">{{ product.desc }}</p>
           </div>
         </div>
       </div>
@@ -38,6 +36,7 @@ import { ourSystems } from '/src/data/productList.js';
   align-items: center;
   padding: 60px 132px;
   background: #f9fafb;
+  scroll-margin-top: 120px;
 }
 
 .h-2 {

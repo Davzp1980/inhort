@@ -19,7 +19,7 @@ const emit = defineEmits(['openModal']);
           Конфігурації
         </li>
         <li class="nav-link" @click="scrollTo('ourSystems')">Системи</li>
-        <li class="nav-link" @click="scrollTo('contacts')">Контакти</li>
+        <li class="nav-link" @click="scrollTo('joinUs-section')">Контакти</li>
       </ul>
     </nav>
 

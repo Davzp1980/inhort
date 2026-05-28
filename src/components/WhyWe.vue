@@ -185,6 +185,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-margin-top: 120px;
   }
 
   .mobile-header {

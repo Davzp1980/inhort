@@ -57,7 +57,7 @@ onMounted(() => {
   });
 });
 
-const onSubmit = handleSubmit(async (values) => {
+const onSubmit = handleSubmit(async values => {
   try {
     const response = await fetch('/api/send-email', {
       method: 'POST',
@@ -83,7 +83,7 @@ const onSubmit = handleSubmit(async (values) => {
     }
   } catch (error) {
     console.error('Submit error:', error);
-    toast.error('Помилка з\'єднання. Спробуйте пізніше.', {
+    toast.error("Помилка з'єднання. Спробуйте пізніше.", {
       position: 'top-center',
       timeout: 3000,
     });
@@ -91,8 +91,8 @@ const onSubmit = handleSubmit(async (values) => {
 });
 </script>
 <template>
-  <div class="wrapper" id="joinUs">
-    <div class="container">
+  <div class="wrapper">
+    <div class="container" id="joinUs-section">
       <h2 class="h-2">Звʼяжіться з нами</h2>
       <div class="connection-div">
         <div class="email-phone-container">
@@ -193,10 +193,12 @@ const onSubmit = handleSubmit(async (values) => {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .container {
   box-sizing: border-box;
   padding: 96px 112px;
   background-color: #333;
+  scroll-margin-top: 120px;
 }
 
 .h-2 {

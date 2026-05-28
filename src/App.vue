@@ -41,7 +41,7 @@ function closeModal() {
       <OurSystems id="ourSystems" />
       <WhoWeWorkFor id="whoWeWorkFor" />
       <Reviews id="reviews" />
-      <JoinUs id="joinUs" />
+      <JoinUs id="joinUs-section" />
 
       <Footer id="contacts" :scrollTo="scrollTo" />
       <GetPriceModal v-if="isOpenModal" :closeModal="closeModal" />

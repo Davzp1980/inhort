@@ -124,7 +124,7 @@ import { whoWeWorkFor } from '/src/data/productList.js';
     width: 336px;
     box-sizing: border-box;
     padding: 80px 12px;
-    margin-bottom: 0;
+    scroll-margin-top: 120px;
   }
 
   .desc-wrapper {
