@@ -2,6 +2,7 @@
 import ReviewItem from '@/components/ReviewItem.vue';
 import 'vue3-carousel/dist/carousel.css';
 import 'primeicons/primeicons.css';
+import { reviews } from '/src/data/productList.js';
 </script>
 <template>
   <div class="container" id="reviews">
@@ -10,11 +11,7 @@ import 'primeicons/primeicons.css';
       <p class="desc">Наша дружня команда завжди готова поспілкуватися</p>
     </div>
     <div class="reviews-div">
-      <ReviewItem
-        v-for="reviews in reviews"
-        :key="reviews.id"
-        :review="reviews"
-      />
+      <ReviewItem v-for="review in reviews" :key="review.id" :review="review" />
     </div>
   </div>
 </template>

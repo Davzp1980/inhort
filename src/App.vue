@@ -12,6 +12,7 @@ import ViewConfigurations from '@/components/ViewConfigurations.vue';
 import OurSystems from '@/components/OurSystems.vue';
 import WhoWeWorkFor from '@/components/WhoWeWorkFor.vue';
 import JoinUs from '@/components/JoinUs.vue';
+import MobileModal from '@/components/MobileModal.vue';
 
 const scrollTo = id => {
   const el = document.getElementById(id);
@@ -19,20 +20,32 @@ const scrollTo = id => {
 };
 
 const isOpenModal = ref(false);
+const isOpenMobileModal = ref(false);
 
 function openModal() {
   isOpenModal.value = true;
 }
+function openMobileModal() {
+  isOpenMobileModal.value = true;
+}
 
 function closeModal() {
   isOpenModal.value = false;
+}
+
+function closeMobileModal() {
+  isOpenMobileModal.value = false;
 }
 </script>
 
 <template>
   <main>
     <div class="main-container">
-      <Header :scrollTo="scrollTo" @open-modal="openModal" />
+      <Header
+        :scrollTo="scrollTo"
+        @open-modal="openModal"
+        @open-mobile-modal="openMobileModal"
+      />
       <HomeSection :scrollTo="scrollTo" id="home" @open-modal="openModal" />
       <WhyWe id="why-we" />
       <Models id="models" />
@@ -45,6 +58,12 @@ function closeModal() {
 
       <Footer id="contacts" :scrollTo="scrollTo" />
       <GetPriceModal v-if="isOpenModal" :closeModal="closeModal" />
+      <MobileModal
+        v-if="isOpenMobileModal"
+        :closeModal="closeMobileModal"
+        :scrollTo="scrollTo"
+        @openModal="openModal"
+      />
     </div>
   </main>
 </template>

@@ -1,25 +1,37 @@
 <script setup>
-defineProps({
-  scrollTo: Function,
+const props = defineProps({
+  scrollTo: {
+    type: Function,
+    default: () => {},
+  },
 });
 
-const emit = defineEmits(['openModal']);
+const emit = defineEmits(['openModal', 'openMobileModal']);
+
+function scrollTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
 </script>
 
 <template>
   <div class="header">
-    <img class="logo" src="/img/Logo.svg" alt="logo" />
+    <img class="logo" src="/img/Logo.svg" alt="logo" @click="scrollTop" />
     <nav>
       <ul class="nav-links">
-        <li class="nav-link" @click="scrollTo('models')">Моделі</li>
-        <li class="nav-link" @click="scrollTo('personalization')">
+        <li class="nav-link" @click="props.scrollTo('models')">Моделі</li>
+        <li class="nav-link" @click="props.scrollTo('personalization')">
           Персоналізації
         </li>
-        <li class="nav-link" @click="scrollTo('viewConfigurations')">
+        <li class="nav-link" @click="props.scrollTo('viewConfigurations')">
           Конфігурації
         </li>
-        <li class="nav-link" @click="scrollTo('ourSystems')">Системи</li>
-        <li class="nav-link" @click="scrollTo('joinUs-section')">Контакти</li>
+        <li class="nav-link" @click="props.scrollTo('ourSystems')">Системи</li>
+        <li class="nav-link" @click="props.scrollTo('joinUs-section')">
+          Контакти
+        </li>
       </ul>
     </nav>
 
@@ -30,6 +42,13 @@ const emit = defineEmits(['openModal']);
       </div>
       <button class="button" type="button" @click="emit('openModal')">
         Зв'язатися з нами
+      </button>
+      <button
+        class="burger-button"
+        type="button"
+        @click="emit('openMobileModal')"
+      >
+        <img src="/burger.svg" alt="mobile menu" />
       </button>
     </div>
   </div>
@@ -55,7 +74,7 @@ const emit = defineEmits(['openModal']);
 
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: clamp(8px, 2vw, 40px);
   list-style: none;
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
@@ -101,18 +120,23 @@ const emit = defineEmits(['openModal']);
   color: #fff;
 }
 
+.burger-button {
+  display: none;
+}
+
 @media (min-width: 767px) and (max-width: 1439px) {
   .header {
     box-sizing: border-box;
-    padding: 26px 32px;
+    padding: 26px 22px;
     width: 100%;
   }
-  nav {
+
+  .phone-div {
     display: none;
   }
 
   .button {
-    padding: 12px 10px;
+    padding: 0 0;
   }
 }
 
@@ -124,15 +148,21 @@ const emit = defineEmits(['openModal']);
   }
 
   .button {
-    padding: 12px 10px;
+    display: none;
   }
 
-  nav {
+  .nav-links {
     display: none;
   }
 
   .phone-div {
     display: none;
+  }
+
+  .burger-button {
+    display: block;
+    border: none;
+    background-color: transparent;
   }
 }
 </style>
