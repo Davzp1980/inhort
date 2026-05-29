@@ -70,6 +70,7 @@ function scrollTop() {
   margin: 0;
   width: 132px;
   height: 38px;
+  cursor: pointer;
 }
 
 .nav-links {
