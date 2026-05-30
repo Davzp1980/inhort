@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
   scrollTo: {
     type: Function,
@@ -7,12 +9,18 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['openModal', 'openMobileModal']);
+const activeTab = ref('');
+
+function setActiveTab(tab) {
+  activeTab.value = tab;
+}
 
 function scrollTop() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
   });
+  activeTab.value = '';
 }
 </script>
 
@@ -21,15 +29,54 @@ function scrollTop() {
     <img class="logo" src="/img/Logo.svg" alt="logo" @click="scrollTop" />
     <nav>
       <ul class="nav-links">
-        <li class="nav-link" @click="props.scrollTo('models')">Моделі</li>
-        <li class="nav-link" @click="props.scrollTo('personalization')">
+        <li
+          class="nav-link"
+          :class="activeTab === 'models' ? 'active' : ''"
+          @click="
+            setActiveTab('models');
+            props.scrollTo('models');
+          "
+        >
+          Моделі
+        </li>
+        <li
+          class="nav-link"
+          :class="activeTab === 'personalization' ? 'active' : ''"
+          @click="
+            setActiveTab('personalization');
+            props.scrollTo('personalization');
+          "
+        >
           Персоналізації
         </li>
-        <li class="nav-link" @click="props.scrollTo('viewConfigurations')">
+        <li
+          class="nav-link"
+          :class="activeTab === 'viewConfigurations' ? 'active' : ''"
+          @click="
+            setActiveTab('viewConfigurations');
+            props.scrollTo('viewConfigurations');
+          "
+        >
           Конфігурації
         </li>
-        <li class="nav-link" @click="props.scrollTo('ourSystems')">Системи</li>
-        <li class="nav-link" @click="props.scrollTo('joinUs-section')">
+        <li
+          class="nav-link"
+          :class="activeTab === 'ourSystems' ? 'active' : ''"
+          @click="
+            setActiveTab('ourSystems');
+            props.scrollTo('ourSystems');
+          "
+        >
+          Системи
+        </li>
+        <li
+          class="nav-link"
+          :class="activeTab === 'joinUs-section' ? 'active' : ''"
+          @click="
+            setActiveTab('joinUs-section');
+            props.scrollTo('joinUs-section');
+          "
+        >
           Контакти
         </li>
       </ul>
@@ -86,6 +133,7 @@ function scrollTop() {
 }
 
 .nav-link {
+  position: relative;
   cursor: pointer;
   font-family: var(--font-family), sans-serif;
   font-weight: 400;
@@ -94,6 +142,28 @@ function scrollTop() {
   letter-spacing: -0.02em;
   color: #364153;
 }
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #b00;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.active {
+  color: #b00;
+}
+
 .connect {
   display: flex;
   align-items: center;
