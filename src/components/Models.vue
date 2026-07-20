@@ -16,34 +16,13 @@ import { models } from '/src/data/productList.js';
       </div>
       <div class="model-img-container">
         <div class="model-img-wrapper">
-          <picture>
-            <source
-              :srcset="product.img1Tablet"
-              media="(min-width: 767px) and (max-width: 1439px)"
-            />
-
-            <img class="model-img" :src="product.img1" alt="photo" />
-          </picture>
+          <img class="model-img" :src="product.img1" alt="photo" />
         </div>
         <div class="model-img-wrapper">
-          <picture>
-            <source
-              :srcset="product.img2Tablet"
-              media="(min-width: 767px) and (max-width: 1439px)"
-            />
-
-            <img class="model-img" :src="product.img2" alt="photo" />
-          </picture>
+          <img class="model-img" :src="product.img2" alt="photo" />
         </div>
         <div class="model-img-wrapper">
-          <picture>
-            <source
-              :srcset="product.img3Tablet"
-              media="(min-width: 767px) and (max-width: 1439px)"
-            />
-
-            <img class="model-img" :src="product.img3" alt="photo" />
-          </picture>
+          <img class="model-img" :src="product.img3" alt="photo" />
         </div>
       </div>
     </div>
@@ -153,6 +132,15 @@ import { models } from '/src/data/productList.js';
   .model-img-wrapper {
     width: 224px;
     height: 224px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .model-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
