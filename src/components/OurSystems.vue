@@ -13,8 +13,7 @@ import { ourSystems } from '/src/data/productList.js';
       >
         <div class="item-container">
           <picture>
-            <source media="(max-width: 766px)" :srcset="product.imgMobile" />
-
+            <source media="(max-width: 766px)" :srcset="product.img" />
             <img class="img" :src="product.img" :alt="product.title" />
           </picture>
           <div class="description-div">

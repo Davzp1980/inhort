@@ -7,7 +7,7 @@ import { models } from '/src/data/productList.js';
       <h2 class="h-2">Наші моделі</h2>
     </div>
 
-    <div v-for="product in models" :key="models.id" class="model-container">
+    <div v-for="product in models" :key="product.id" class="model-container">
       <div class="model-name-wrapper">
         <h2 class="model-name">{{ product.title }}</h2>
         <p class="model-description">
@@ -21,7 +21,7 @@ import { models } from '/src/data/productList.js';
         <div class="model-img-wrapper">
           <img class="model-img" :src="product.img2" alt="photo" />
         </div>
-        <div class="model-img-wrapper">
+        <div v-if="product.img3" class="model-img-wrapper">
           <img class="model-img" :src="product.img3" alt="photo" />
         </div>
       </div>
@@ -91,6 +91,7 @@ import { models } from '/src/data/productList.js';
   display: flex;
   gap: 32px;
   justify-content: center;
+  align-items: center;
 }
 
 .model-img-wrapper {
@@ -125,7 +126,8 @@ import { models } from '/src/data/productList.js';
   }
 
   .model-img-container {
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
   }
 
