@@ -97,7 +97,7 @@ import { ourSystems } from '/src/data/productList.js';
   border-radius: 16px;
   width: 540px;
   height: 540px;
-  object-fit: none;
+  object-fit: contain;
 }
 
 @media (min-width: 767px) and (max-width: 1439px) {

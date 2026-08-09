@@ -95,7 +95,7 @@ import { personalization } from '@/data/productList.js';
   overflow: hidden;
   width: 384px;
   height: 384px;
-  object-fit: none;
+  object-fit: contain;
 }
 
 @media (min-width: 767px) and (max-width: 1439px) {
