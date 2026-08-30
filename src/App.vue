@@ -13,6 +13,7 @@ import OurSystems from '@/components/OurSystems.vue';
 import WhoWeWorkFor from '@/components/WhoWeWorkFor.vue';
 import JoinUs from '@/components/JoinUs.vue';
 import MobileModal from '@/components/MobileModal.vue';
+import OurKarnizu from '@/components/OurKarnizu.vue';
 
 const scrollTo = id => {
   const el = document.getElementById(id);
@@ -51,6 +52,7 @@ function closeMobileModal() {
       <Models id="models" />
       <Personalization id="personalization" />
       <ViewConfigurations id="viewConfigurations" />
+      <OurKarnizu id="ourKarnizu" />
       <OurSystems id="ourSystems" />
       <WhoWeWorkFor id="whoWeWorkFor" />
       <Reviews id="reviews" />

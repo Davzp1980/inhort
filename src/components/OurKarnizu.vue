@@ -1,14 +1,14 @@
 <script setup>
-import { ourSystems } from '/src/data/productList.js';
+import { ourKarnizu } from '/src/data/productList.js';
 </script>
 
 <template>
   <div class="container" id="models">
-    <h2 class="h-2">Наші системи</h2>
+    <h2 class="h-2">Наші Карнизи</h2>
     <div class="wrapper">
       <div
-        v-for="product in ourSystems"
-        :key="ourSystems.id"
+        v-for="product in ourKarnizu"
+        :key="product.id"
         class="ourSystems-wrapper"
       >
         <div class="item-container">
@@ -16,6 +16,7 @@ import { ourSystems } from '/src/data/productList.js';
             <h2 class="item-title">{{ product.title }}</h2>
             <p class="item-description">{{ product.desc }}</p>
           </div>
+
           <img class="img" :src="product.img" :alt="product.title" />
         </div>
       </div>
@@ -30,7 +31,7 @@ import { ourSystems } from '/src/data/productList.js';
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 132px;
+  padding: 60px 132px;
   background: #f9fafb;
   scroll-margin-top: 120px;
 }
@@ -63,10 +64,6 @@ import { ourSystems } from '/src/data/productList.js';
   justify-content: center;
 }
 
-.ourSystems-wrapper:last-child {
-  margin-right: 572px;
-}
-
 .item-container {
   width: 540px;
   display: flex;
@@ -75,13 +72,8 @@ import { ourSystems } from '/src/data/productList.js';
   align-items: center;
 }
 
-.item-container {
-  justify-content: flex-start;
-}
-
 .description-div {
-  min-height: 130px;
-  margin-bottom: 0;
+  margin-bottom: 32px;
 }
 
 .item-title {
@@ -101,7 +93,7 @@ import { ourSystems } from '/src/data/productList.js';
   line-height: 150%;
   color: #525252;
   max-width: 530px;
-  min-height: 90px;
+  min-height: 130px;
 }
 
 .img {
@@ -115,7 +107,7 @@ import { ourSystems } from '/src/data/productList.js';
   .container {
     margin: 0;
     width: 100%;
-    padding: 0 32px;
+    padding: 60px 32px;
   }
 
   .h-2 {
@@ -137,7 +129,7 @@ import { ourSystems } from '/src/data/productList.js';
 
   .item-container {
     width: 340px;
-    row-gap: 32px;
+    row-gap: 48px;
     column-gap: 24px;
   }
 
@@ -146,20 +138,12 @@ import { ourSystems } from '/src/data/productList.js';
   }
 
   .item-description {
-    min-height: 120px;
+    min-height: 180px;
   }
 
   .img {
     width: 340px;
     height: 340px;
-  }
-
-  .ourSystems-wrapper:last-child {
-    margin-right: 340px;
-  }
-
-  .ourSystems-wrapper:last-child .item-description {
-    min-height: 0;
   }
 }
 
@@ -167,8 +151,8 @@ import { ourSystems } from '/src/data/productList.js';
   .container {
     box-sizing: border-box;
     width: 100%;
-    padding: 0 12px;
-    margin-bottom: 0;
+    padding: 60px 12px;
+    margin-bottom: 20px;
   }
 
   .h-2 {
