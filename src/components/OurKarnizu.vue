@@ -152,7 +152,7 @@ import { ourKarnizu } from '/src/data/productList.js';
     box-sizing: border-box;
     width: 100%;
     padding: 60px 12px;
-    margin-bottom: 20px;
+    padding-bottom: 80px;
   }
 
   .h-2 {
