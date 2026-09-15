@@ -166,7 +166,7 @@ export const viewConfigurations = [
   },
   {
     id: 3,
-    title: 'Без прутів',
+    title: 'Фльор',
     desc: 'Штора без прутів, нитки проходять чарез вертикальну тасьму ',
     img1: '/img/bezPrutiv/bezPrutiv1.webp',
     img2: '/img/bezPrutiv/bezPrutiv2.webp',
