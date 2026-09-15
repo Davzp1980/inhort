@@ -88,6 +88,17 @@ export const models = [
     img2Tablet: '/img/azhur/azhur2-tablet.webp',
     img3Tablet: '/img/azhur/azhur3-tablet.webp',
   },
+  {
+    id: 7,
+    title: 'Стелла 3D',
+    desc: 'Модель з об’ємними кантами які нашиваються по боках, канти можна робити з будь-якої тканини, і різним відступом',
+    img1: '/img/stela3D/stela3D1.webp',
+    img2: '/img/stela3D/stela3D2.webp',
+    img3: '/img/stela3D/stela3D3.webp',
+    img1Tablet: '/img/azhur/azhur1-tablet.webp',
+    img2Tablet: '/img/azhur/azhur2-tablet.webp',
+    img3Tablet: '/img/azhur/azhur3-tablet.webp',
+  },
   // {
   //   id: 11,
   //   title: 'Лайн',
@@ -155,7 +166,7 @@ export const viewConfigurations = [
   },
   {
     id: 3,
-    title: 'Фльор',
+    title: 'Без прутів',
     desc: 'Штора без прутів, нитки проходять чарез вертикальну тасьму ',
     img1: '/img/bezPrutiv/bezPrutiv1.webp',
     img2: '/img/bezPrutiv/bezPrutiv2.webp',
