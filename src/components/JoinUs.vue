@@ -2,7 +2,7 @@
 import { useField, useForm } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useToast } from 'vue-toastification';
 import IMask from 'imask';
 
@@ -109,7 +109,7 @@ const onSubmit = handleSubmit(async values => {
               <img class="phone-icon" src="/phone-icon.svg" alt="phone" />
               <p class="email-title">Телефон</p>
               <p class="email-text">Пн-Пт з 9:00 до 17:00</p>
-              <a class="email" href="tel:+380638466546">+380 63 846 65 46</a>
+              <a class="email" href="tel:+380959206155">+380 95 920 61 55</a>
             </div>
           </div>
 

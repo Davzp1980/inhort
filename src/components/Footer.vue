@@ -33,9 +33,9 @@ defineProps({
 
       <div class="contacts">
         <p class="contacts-title">Контакти</p>
-        <a class="contacts-text" href="tel:+380638466546">
+        <a class="contacts-text" href="tel:+380959206155">
           <img class="contact-img" src="/phone-red-ison.svg" alt="phone" />
-          +380 63 846 65 46
+          +380 95 920 61 55
         </a>
         <a class="contacts-text" href="mailto:inhortopt@gmail.com">
           <img src="/email-red-icon.svg" alt="email" />

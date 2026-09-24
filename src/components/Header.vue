@@ -85,7 +85,7 @@ function scrollTop() {
     <div class="connect">
       <div class="phone-div">
         <img src="/img/phone.svg" alt="phone" />
-        <p class="nav-link">+380 63 846 65 46</p>
+        <p class="nav-link">+380 95 920 61 55</p>
       </div>
       <button class="button" type="button" @click="emit('openModal')">
         Зв'язатися з нами
