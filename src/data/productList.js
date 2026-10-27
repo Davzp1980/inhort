@@ -174,6 +174,15 @@ export const viewConfigurations = [
   },
   {
     id: 4,
+    title: 'Алізе',
+    desc: 'Штора без прутів, нитки проходять чарез вертикальну тасьму з  фалдами',
+    img1: 'img/alize/alize1.webp',
+    img2: 'img/alize/alize2.webp',
+    img3: 'img/alize/alize3.webp',
+  },
+
+  {
+    id: 5,
     title: 'Каскад',
     desc: 'В розправленому положенні на шторі будуть складки',
     img1: '/img/kaskad/kaskad1.webp',
