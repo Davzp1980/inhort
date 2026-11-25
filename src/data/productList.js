@@ -45,7 +45,7 @@ export const models = [
   //   img3Tablet: '/img/portofino/portofino3-tablet.webp',
   // },
   {
-    id: 8,
+    id: 4,
     title: 'Соло',
     desc: "Класична однотонна модель, яка ідеально підходить для будь-якого стилю інтер'єру",
     img1: '/img/solo/solo1.webp',
@@ -56,7 +56,7 @@ export const models = [
     img3Tablet: '/img/solo/solo3-tablet.webp',
   },
   {
-    id: 9,
+    id: 5,
     title: 'Стелла',
     desc: 'Модель з кантами які нашиваються по боках, канти можна робити з будь-якої тканини, репсової стрічки або разом',
     img1: '/img/stela/stela1.webp',
@@ -67,7 +67,18 @@ export const models = [
     img3Tablet: '/img/stela/stela3-tablet.webp',
   },
   {
-    id: 10,
+    id: 6,
+    title: 'Стелла 3D',
+    desc: 'Модель з об’ємними кантами які нашиваються по боках, канти можна робити з будь-якої тканини, і різним відступом',
+    img1: '/img/stela3D/stela3D1.webp',
+    img2: '/img/stela3D/stela3D2.webp',
+    img3: '/img/stela3D/stela3D3.webp',
+    img1Tablet: '/img/azhur/azhur1-tablet.webp',
+    img2Tablet: '/img/azhur/azhur2-tablet.webp',
+    img3Tablet: '/img/azhur/azhur3-tablet.webp',
+  },
+  {
+    id: 7,
     title: 'Призма',
     desc: 'Модель з кантами які нашиваються по боках та низу, канти можна робити з будь-якої тканини, репсової стрічки або разом',
     img1: '/img/prizma/prizma1.webp',
@@ -78,7 +89,15 @@ export const models = [
     img3Tablet: '/img/prizma/prizma3-tablet.webp',
   },
   {
-    id: 6,
+    id: 8,
+    title: 'Елеганс',
+    desc: 'Модель з тонкую смужкою яка нашиваєтся по боках та низу штори',
+    img1: '/img/elegance/elegance1.webp',
+    img2: '/img/elegance/elegance2.webp',
+    img3: '/img/elegance/elegance3.webp',
+  },
+  {
+    id: 9,
     title: 'Ажур',
     desc: 'Модель з ажурною обробкою низу штори. Виготовляємо тільки з тканин асортименту фабрики',
     img1: '/img/azhur/azhur1.webp',
@@ -88,17 +107,7 @@ export const models = [
     img2Tablet: '/img/azhur/azhur2-tablet.webp',
     img3Tablet: '/img/azhur/azhur3-tablet.webp',
   },
-  {
-    id: 7,
-    title: 'Стелла 3D',
-    desc: 'Модель з об’ємними кантами які нашиваються по боках, канти можна робити з будь-якої тканини, і різним відступом',
-    img1: '/img/stela3D/stela3D1.webp',
-    img2: '/img/stela3D/stela3D2.webp',
-    img3: '/img/stela3D/stela3D3.webp',
-    img1Tablet: '/img/azhur/azhur1-tablet.webp',
-    img2Tablet: '/img/azhur/azhur2-tablet.webp',
-    img3Tablet: '/img/azhur/azhur3-tablet.webp',
-  },
+
   // {
   //   id: 11,
   //   title: 'Лайн',
